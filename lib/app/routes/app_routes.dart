@@ -7,6 +7,9 @@ abstract class Routes {
   static const AUTH_VIEW = _Paths.AUTH_VIEW;
   static const SIGN_IN = _Paths.SIGN_IN;
   static const SIGN_UP = _Paths.SIGN_UP;
+  static const MARKET = _Paths.MARKET;
+  static const NEWS = _Paths.NEWS;
+  static const ABOUT = _Paths.ABOUT;
 }
 
 abstract class _Paths {
@@ -15,4 +18,7 @@ abstract class _Paths {
   static const AUTH_VIEW = '/auth-view';
   static const SIGN_IN = '/sign-in';
   static const SIGN_UP = '/sign-up';
+  static const MARKET = '/market';
+  static const NEWS = '/news';
+  static const ABOUT = '/about';
 }

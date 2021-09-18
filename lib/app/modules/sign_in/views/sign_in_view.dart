@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/enviroment/widgets/custom_buttons.dart';
+import 'package:your_coin/app/modules/home/views/home_view.dart';
 
 import 'package:your_coin/app/modules/sign_in/controllers/sign_in_controller.dart';
 import 'package:your_coin/app/modules/sign_up/views/sign_up_view.dart';
@@ -150,6 +151,8 @@ class SignInView extends GetView<SignInController> {
                       ),
                       onTap: () {
                         // TODO Login Function
+
+                        Get.toNamed('/home');
                       },
                       color: Env.colors.primaryDarkIndigo,
                       borderColor: Env.colors.white,
@@ -159,9 +162,7 @@ class SignInView extends GetView<SignInController> {
                     height: 60,
                   ),
                   GestureDetector(
-                    onTap: () {
-                      Get.toNamed('/sign-up');
-                    },
+                    onTap: () {},
                     child: Center(
                       child: Container(
                         height: 50,
