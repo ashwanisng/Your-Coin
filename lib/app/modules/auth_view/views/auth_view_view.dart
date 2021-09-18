@@ -65,7 +65,7 @@ class AuthViewView extends GetView<AuthViewController> {
                       ),
                 ),
                 onTap: () {
-                  Get.to(() => SignInView());
+                  Get.toNamed('/sign-in');
                 },
                 color: Env.colors.primaryDarkIndigo,
                 borderColor: Env.colors.white,
@@ -87,7 +87,7 @@ class AuthViewView extends GetView<AuthViewController> {
                 ),
                 borderColor: Env.colors.primaryDarkIndigo,
                 onTap: () {
-                  Get.to(() => SignUpView());
+                  Get.toNamed('/sign-up');
                 },
                 color: Env.colors.white,
               ),

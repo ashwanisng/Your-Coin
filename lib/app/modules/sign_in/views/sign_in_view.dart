@@ -159,7 +159,9 @@ class SignInView extends GetView<SignInController> {
                     height: 60,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      Get.toNamed('/sign-up');
+                    },
                     child: Center(
                       child: Container(
                         height: 50,
@@ -204,7 +206,7 @@ class SignInView extends GetView<SignInController> {
                         ),
                         TextButton(
                           onPressed: () {
-                            Get.to(() => SignUpView());
+                            Get.toNamed('/sign-up');
                           },
                           child: Text(
                             "Signup",
