@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:your_coin/app/enviroment/utils/dialogs.dart/custom_dialog.dart';
+import 'package:your_coin/app/global/binding/firabse_auth.dart';
 import 'package:your_coin/app/modules/entry/controllers/entry_controller.dart';
 
 class SignInController extends GetxController {
@@ -12,6 +13,8 @@ class SignInController extends GetxController {
   TextEditingController passwordController = TextEditingController();
 
   // EntryController entryController = Get.find<EntryController>();
+
+  // FirebaseAuthController authController = Get.find<FirebaseAuthController>();
 
   @override
   void onInit() {

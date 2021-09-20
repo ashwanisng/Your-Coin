@@ -1,25 +1,29 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:get/get.dart';
-// import 'package:google_sign_in/google_sign_in.dart';
-// import 'package:your_coin/app/modules/home/views/home_view.dart';
-// import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:your_coin/app/modules/home/views/home_view.dart';
 
-// class FirebaseAuthController extends GetxController {
-//   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+class FirebaseAuthController extends GetxController {
+  FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-//   GoogleSignIn googleSignIn = GoogleSignIn();
+  // Rx<FireBaseUser> _user = Rx<User>();
 
+  GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['email']);
 
+  void googleSignInMethod() async {
+    final GoogleSignInAccount? googleSignInAccount =
+        await googleSignIn.signIn();
 
-//   void googleSignIn() async {
-//     final GoogleSignInAccount? googleSignInAccount = await googleSignIn.signIn();
-//     final GoogleSignInAuthentication googleSignInAuthentication = await googleSignInAccount!.authentication;
+    GoogleSignInAuthentication authentication =
+        await googleSignInAccount!.authentication;
 
-//     final AuthCredential credential = GoogleAuthProvider.credential(
-//       idToken: googleSignInAuthentication.idToken,
-//       accessToken: googleSignInAuthentication.accessToken,
-//     );
+    final AuthCredential credential = GoogleAuthProvider.credential(
+      idToken: authentication.idToken,
+      accessToken: authentication.accessToken,
+    );
 
-//     final User user = await firebaseAuth.signInWithCredential(credential).then((value) => HomeView());
-//   }
-// }
+    await firebaseAuth.signInWithCredential(credential).then((value) {
+      return Get.offAll(HomeView());
+    });
+  }
+}

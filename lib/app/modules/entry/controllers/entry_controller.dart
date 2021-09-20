@@ -38,7 +38,7 @@ class EntryController extends GetxController {
 
   // void handleAuthStateChanged(isLoggedIn) {
   //   if (isLoggedIn) {
-  //     Get.offAll(() => HomeScreenView());
+  //     Get.offAll(() => HomeView());
   //   } else {
   //     Get.offAll(() => AuthView());
   //   }

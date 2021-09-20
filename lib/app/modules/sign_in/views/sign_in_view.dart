@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/enviroment/widgets/custom_buttons.dart';
+import 'package:your_coin/app/global/binding/firabse_auth.dart';
 import 'package:your_coin/app/modules/home/views/home_view.dart';
 
 import 'package:your_coin/app/modules/sign_in/controllers/sign_in_controller.dart';
@@ -161,38 +162,41 @@ class SignInView extends GetView<SignInController> {
                   SizedBox(
                     height: 60,
                   ),
-                  GestureDetector(
-                    onTap: () {
-                      // controller.signInWithGoogle(context: context);
-                    },
-                    child: Center(
-                      child: Container(
-                        height: 50,
-                        width: 250,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(8),
-                          ),
-                          // border: Border.all(color: borderColor),
-                          color: Colors.white,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Image.asset(
-                              'assets/images/google.png',
-                              height: 25,
+                  GetBuilder<FirebaseAuthController>(
+                    init: FirebaseAuthController(),
+                    builder: (value) => GestureDetector(
+                      onTap: () {
+                        value.googleSignInMethod();
+                      },
+                      child: Center(
+                        child: Container(
+                          height: 50,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(8),
                             ),
-                            Text(
-                              "Sign in with Google",
-                              style: TextStyle(
-                                color: Env.colors.primaryDarkIndigo,
-                                fontFamily: "Nunito",
-                                fontWeight: FontWeight.w700,
-                                fontSize: 18,
+                            // border: Border.all(color: borderColor),
+                            color: Colors.white,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Image.asset(
+                                'assets/images/google.png',
+                                height: 25,
                               ),
-                            )
-                          ],
+                              Text(
+                                "Sign in with Google",
+                                style: TextStyle(
+                                  color: Env.colors.primaryDarkIndigo,
+                                  fontFamily: "Nunito",
+                                  fontWeight: FontWeight.w700,
+                                  fontSize: 18,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
