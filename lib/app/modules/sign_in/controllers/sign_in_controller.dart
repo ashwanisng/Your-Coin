@@ -4,12 +4,10 @@ import 'package:get/get.dart';
 class SignInController extends GetxController {
   //TODO: Implement SignInController
 
-  TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
-
-  // EntryController entryController = Get.find<EntryController>();
-
-  // FirebaseAuthController authController = Get.find<FirebaseAuthController>();
+  TextEditingController emailController =
+      TextEditingController(text: 'test@test.com');
+  TextEditingController passwordController =
+      TextEditingController(text: '123456');
 
   @override
   void onInit() {

@@ -50,4 +50,25 @@ class FirebaseAuthController extends GetxController {
       );
     }
   }
+
+  //* sigin with email and password
+
+  void signInWithEmailAndPassword(String email, String password) async {
+    try {
+      await firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password)
+          .then((user) {
+        return Get.offAll(HomeView());
+      });
+    } catch (e) {
+      print(e);
+      Get.snackbar(
+        "Error found",
+        "Please check your Email or Password",
+        colorText: Env.colors.black,
+        backgroundColor: Env.colors.leafGreen,
+        snackPosition: SnackPosition.BOTTOM,
+      );
+    }
+  }
 }

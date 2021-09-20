@@ -137,24 +137,29 @@ class SignInView extends GetView<SignInController> {
                   SizedBox(height: 50),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: CustomButton(
-                      buttonName: Text(
-                        "SIGN IN",
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                              color: Env.colors.white,
-                              fontFamily: 'Nunito',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 2.0,
-                            ),
-                      ),
-                      onTap: () {
-                        // TODO Login Function
+                    child: GetBuilder<FirebaseAuthController>(
+                      builder: (value) => CustomButton(
+                        buttonName: Text(
+                          "SIGN IN",
+                          style:
+                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Env.colors.white,
+                                    fontFamily: 'Nunito',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 2.0,
+                                  ),
+                        ),
+                        onTap: () {
+                          // TODO Login Function
 
-                        Get.toNamed('/home');
-                      },
-                      color: Env.colors.primaryDarkIndigo,
-                      borderColor: Env.colors.white,
+                          value.signInWithEmailAndPassword(
+                              controller.emailController.text,
+                              controller.passwordController.text);
+                        },
+                        color: Env.colors.primaryDarkIndigo,
+                        borderColor: Env.colors.white,
+                      ),
                     ),
                   ),
                   SizedBox(
