@@ -11,7 +11,11 @@ class SignUpController extends GetxController {
   TextEditingController passwordController =
       TextEditingController(text: "123456");
 
-  // EntryController controller = Get.find();
+  var isVisible = true.obs;
+
+  void tooglePassword() {
+    isVisible.value = !isVisible.value;
+  }
 
   @override
   void onInit() {

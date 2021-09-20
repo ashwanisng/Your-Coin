@@ -137,14 +137,16 @@ class SignUpView extends GetView<SignUpController> {
                     SizedBox(height: 15),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: TextFormField(
-                        controller: controller.passwordController,
-                        style: TextStyle(
-                          color: Env.colors.black,
-                          fontFamily: 'Nunito',
-                          fontWeight: FontWeight.w500,
-                        ),
-                        decoration: InputDecoration(
+                      child: Obx(
+                        () => TextFormField(
+                          controller: controller.passwordController,
+                          obscureText: controller.isVisible.value,
+                          style: TextStyle(
+                            color: Env.colors.black,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w500,
+                          ),
+                          decoration: InputDecoration(
                             filled: true,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
@@ -170,11 +172,24 @@ class SignUpView extends GetView<SignUpController> {
                               CupertinoIcons.lock,
                               color: Env.colors.primaryDarkIndigo,
                             ),
-                            suffixIcon: Icon(
-                              CupertinoIcons.eye_fill,
-                              color: Env.colors.primaryDarkIndigo,
-                            )),
-                        keyboardType: TextInputType.visiblePassword,
+                            suffixIcon: IconButton(
+                              onPressed: () {
+                                controller.tooglePassword();
+                                print(controller.isVisible);
+                              },
+                              icon: controller.isVisible.value
+                                  ? Icon(
+                                      Icons.visibility_off_rounded,
+                                      color: Env.colors.primaryDarkIndigo,
+                                    )
+                                  : Icon(
+                                      CupertinoIcons.eye_fill,
+                                      color: Env.colors.primaryDarkIndigo,
+                                    ),
+                            ),
+                          ),
+                          keyboardType: TextInputType.visiblePassword,
+                        ),
                       ),
                     ),
                     SizedBox(height: 50),
