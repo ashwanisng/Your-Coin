@@ -7,6 +7,8 @@ import 'package:your_coin/app/modules/home/views/widgets/custom_card.dart';
 import 'package:your_coin/app/modules/home/views/widgets/custom_dialogbox.dart';
 
 class HomeScreenView extends GetView<HomeController> {
+  final items = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,71 +36,73 @@ class HomeScreenView extends GetView<HomeController> {
                         end: Alignment.bottomRight,
                       ),
                     ),
-                    child: ListView.builder(
-                      itemCount: controller.exchangeList.length,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.symmetric(horizontal: 10),
-                              child: Row(
+                    child: Obx(
+                      () => ListView.builder(
+                        itemCount: controller.exchangeList.length,
+                        itemBuilder: (context, index) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 10),
+                                child: Row(
+                                  children: [
+                                    Image.network(
+                                      controller.exchangeList[index].image!,
+                                      height: 40,
+                                    ),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      controller.coinNameController.text
+                                          .toUpperCase(),
+                                      style: TextStyle(
+                                        color: Env.colors.white,
+                                        fontWeight: FontWeight.w900,
+                                        fontSize: 22,
+                                        fontFamily: 'Nunito',
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              SizedBox(height: 20),
+                              Row(
                                 children: [
-                                  Image.network(
-                                    controller.exchangeList[index].image!,
-                                    height: 40,
-                                  ),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    controller.coinNameController.text
-                                        .toUpperCase(),
-                                    style: TextStyle(
-                                      color: Env.colors.white,
-                                      fontWeight: FontWeight.w900,
-                                      fontSize: 22,
-                                      fontFamily: 'Nunito',
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 20),
+                                    child: Text(
+                                      '\$ ${controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value}'
+                                          .toString(),
+                                      style: TextStyle(
+                                        color: Env.colors.white,
+                                        fontSize: 32,
+                                        fontWeight: FontWeight.w900,
+                                        fontFamily: 'Nunito',
+                                      ),
                                     ),
                                   ),
                                 ],
                               ),
-                            ),
-                            SizedBox(height: 20),
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 20),
-                                  child: Text(
-                                    '\$ ${controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value}'
-                                        .toString(),
-                                    style: TextStyle(
-                                      color: Env.colors.white,
-                                      fontSize: 32,
-                                      fontWeight: FontWeight.w900,
-                                      fontFamily: 'Nunito',
-                                    ),
+                              SizedBox(height: 5),
+                              Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 20),
+                                child: Text(
+                                  '\$ ${controller.exchangeList[index].currentPrice!} ${controller.exchangeList[index].symbol!.toUpperCase()}'
+                                      .toString(),
+                                  style: TextStyle(
+                                    color: Env.colors.white,
+                                    fontSize: 26,
+                                    fontWeight: FontWeight.w700,
+                                    fontFamily: 'Nunito',
                                   ),
                                 ),
-                              ],
-                            ),
-                            SizedBox(height: 5),
-                            Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 20),
-                              child: Text(
-                                '\$ ${controller.exchangeList[index].currentPrice!} ${controller.exchangeList[index].symbol!.toUpperCase()}'
-                                    .toString(),
-                                style: TextStyle(
-                                  color: Env.colors.white,
-                                  fontSize: 26,
-                                  fontWeight: FontWeight.w700,
-                                  fontFamily: 'Nunito',
-                                ),
                               ),
-                            ),
-                          ],
-                        );
-                      },
+                            ],
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

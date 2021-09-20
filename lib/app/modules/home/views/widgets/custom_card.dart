@@ -12,54 +12,53 @@ class CustomCard extends GetView<HomeController> {
       itemBuilder: (context, index) {
         var data = controller.marketController.cryptoList[index];
         return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
-            child: Obx(() => Card(
-                  elevation: 2,
-                  child: ListTile(
-                    leading: Image.network(data.image!),
-                    title: Text(
-                      data.id!,
-                      style: TextStyle(
-                        fontFamily: 'Nunito',
+          padding: const EdgeInsets.symmetric(horizontal: 8),
+          child: Card(
+            elevation: 2,
+            child: ListTile(
+              leading: Image.network(data.image!),
+              title: Text(
+                data.id!,
+                style: TextStyle(
+                  fontFamily: 'Nunito',
+                ),
+              ),
+              subtitle: Text('Rank ${data.marketCapRank}'),
+              trailing: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Flexible(
+                    child: RichText(
+                      text: TextSpan(
+                        text: '\$ ${data.currentPrice!.toStringAsFixed(2)}',
+                        style: TextStyle(
+                          color: Env.colors.black,
+                          fontFamily: 'Nunito',
+                        ),
                       ),
                     ),
-                    subtitle: Text('Rank ${data.marketCapRank}'),
-                    trailing: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Flexible(
-                          child: RichText(
-                            text: TextSpan(
-                              text:
-                                  '\$ ${data.currentPrice!.toStringAsFixed(2)}',
-                              style: TextStyle(
-                                color: Env.colors.black,
-                                fontFamily: 'Nunito',
-                              ),
-                            ),
-                          ),
-                        ),
-                        Flexible(
-                          child: RichText(
-                            overflow: TextOverflow.ellipsis,
-                            text: TextSpan(
-                              text: data.priceChangePercentage24H!.isNegative
-                                  ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}'
-                                  : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}',
-                              style: TextStyle(
-                                  color:
-                                      data.priceChangePercentage24H!.isNegative
-                                          ? Colors.red
-                                          : Colors.green,
-                                  fontFamily: 'Nunito',
-                                  fontWeight: FontWeight.w700),
-                            ),
-                          ),
-                        ),
-                      ],
+                  ),
+                  Flexible(
+                    child: RichText(
+                      overflow: TextOverflow.ellipsis,
+                      text: TextSpan(
+                        text: data.priceChangePercentage24H!.isNegative
+                            ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}'
+                            : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}',
+                        style: TextStyle(
+                            color: data.priceChangePercentage24H!.isNegative
+                                ? Colors.red
+                                : Colors.green,
+                            fontFamily: 'Nunito',
+                            fontWeight: FontWeight.w700),
+                      ),
                     ),
                   ),
-                )));
+                ],
+              ),
+            ),
+          ),
+        );
       },
     );
   }
