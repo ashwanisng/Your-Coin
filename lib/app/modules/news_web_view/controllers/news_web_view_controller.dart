@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class NewswwebviewController extends GetxController {
-  //TODO: Implement NewswwebviewController
+class NewsWebViewController extends GetxController {
+  //TODO: Implement NewsWebViewController
 
   final Completer<WebViewController> completer = Completer<WebViewController>();
 
@@ -25,6 +25,7 @@ class NewswwebviewController extends GetxController {
     }
 
     print('URL IS : $url');
+
     super.onInit();
   }
 

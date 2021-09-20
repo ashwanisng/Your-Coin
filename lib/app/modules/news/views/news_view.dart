@@ -31,7 +31,7 @@ class NewsView extends GetView<NewsController> {
                       padding: const EdgeInsets.all(8.0),
                       child: GestureDetector(
                         onTap: () {
-                          Get.toNamed('/newswwebview',
+                          Get.toNamed('/news-web-view',
                               arguments: controller.newsList[index].url);
                         },
                         child: Column(

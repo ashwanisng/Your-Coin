@@ -10,6 +10,8 @@ import 'package:your_coin/app/modules/market/bindings/market_binding.dart';
 import 'package:your_coin/app/modules/market/views/market_view.dart';
 import 'package:your_coin/app/modules/news/bindings/news_binding.dart';
 import 'package:your_coin/app/modules/news/views/news_view.dart';
+import 'package:your_coin/app/modules/news_web_view/bindings/news_web_view_binding.dart';
+import 'package:your_coin/app/modules/news_web_view/views/news_web_view_view.dart';
 import 'package:your_coin/app/modules/sign_in/bindings/sign_in_binding.dart';
 import 'package:your_coin/app/modules/sign_in/views/sign_in_view.dart';
 import 'package:your_coin/app/modules/sign_up/bindings/sign_up_binding.dart';
@@ -55,6 +57,11 @@ class AppPages {
       name: _Paths.ABOUT,
       page: () => AboutView(),
       binding: AboutBinding(),
+    ),
+    GetPage(
+      name: _Paths.NEWS_WEB_VIEW,
+      page: () => NewsWebViewView(),
+      binding: NewsWebViewBinding(),
     ),
   ];
 }

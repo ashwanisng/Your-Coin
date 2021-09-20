@@ -9,6 +9,7 @@ abstract class Routes {
   static const MARKET = _Paths.MARKET;
   static const NEWS = _Paths.NEWS;
   static const ABOUT = _Paths.ABOUT;
+  static const NEWS_WEB_VIEW = _Paths.NEWS_WEB_VIEW;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const MARKET = '/market';
   static const NEWS = '/news';
   static const ABOUT = '/about';
+  static const NEWS_WEB_VIEW = '/news-web-view';
 }
