@@ -1,10 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import 'package:google_sign_in/google_sign_in.dart';
 import 'package:your_coin/app/modules/entry/views/pages/auth_view.dart';
-import 'package:your_coin/app/modules/home/views/home_view.dart';
-import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
-import 'package:your_coin/app/routes/app_pages.dart';
 
 class EntryController extends GetxController {
   //TODO: Implement EntryController
