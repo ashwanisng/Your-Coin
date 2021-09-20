@@ -2,8 +2,6 @@ import 'package:get/get.dart';
 
 import 'package:your_coin/app/modules/about/bindings/about_binding.dart';
 import 'package:your_coin/app/modules/about/views/about_view.dart';
-import 'package:your_coin/app/modules/auth_view/bindings/auth_view_binding.dart';
-import 'package:your_coin/app/modules/auth_view/views/auth_view_view.dart';
 import 'package:your_coin/app/modules/entry/bindings/entry_binding.dart';
 import 'package:your_coin/app/modules/entry/views/entry_view.dart';
 import 'package:your_coin/app/modules/home/bindings/home_binding.dart';
@@ -32,11 +30,6 @@ class AppPages {
       name: _Paths.ENTRY,
       page: () => EntryView(),
       binding: EntryBinding(),
-    ),
-    GetPage(
-      name: _Paths.AUTH_VIEW,
-      page: () => AuthViewView(),
-      binding: AuthViewBinding(),
     ),
     GetPage(
       name: _Paths.SIGN_IN,

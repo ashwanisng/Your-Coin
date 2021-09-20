@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/enviroment/widgets/custom_buttons.dart';
-
-import 'package:your_coin/app/modules/auth_view/controllers/auth_view_controller.dart';
+import 'package:your_coin/app/modules/sign_in/bindings/sign_in_binding.dart';
 import 'package:your_coin/app/modules/sign_in/views/sign_in_view.dart';
-import 'package:your_coin/app/modules/sign_up/views/sign_up_view.dart';
 
-class AuthViewView extends GetView<AuthViewController> {
+class AuthView extends StatelessWidget {
+  const AuthView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -65,7 +64,9 @@ class AuthViewView extends GetView<AuthViewController> {
                       ),
                 ),
                 onTap: () {
-                  Get.toNamed('/sign-in');
+                  Get.to(
+                    () => SignInView(),
+                  );
                 },
                 color: Env.colors.primaryDarkIndigo,
                 borderColor: Env.colors.white,

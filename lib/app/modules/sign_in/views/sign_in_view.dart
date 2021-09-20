@@ -162,7 +162,9 @@ class SignInView extends GetView<SignInController> {
                     height: 60,
                   ),
                   GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      // controller.signInWithGoogle(context: context);
+                    },
                     child: Center(
                       child: Container(
                         height: 50,

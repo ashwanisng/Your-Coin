@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "166390230656",
+    "project_id": "yourcoin-c6918",
+    "storage_bucket": "yourcoin-c6918.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166390230656:android:3f502322ddd2cabe3f8065",
+        "android_client_info": {
+          "package_name": "com.ashwanisng.your_coin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166390230656-1oulsgppsedr7s5f1amho35f0h5hvhap.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ashwanisng.your_coin",
+            "certificate_hash": "b1dd5e1601c52e53120ff322522cde5bb70aeb39"
+          }
+        },
+        {
+          "client_id": "166390230656-993p7frb7fgr1t835idrlcd96sm7ce9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_YVy6AVBXuXdbL4daR0yBe2y4oX-_kAw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166390230656-993p7frb7fgr1t835idrlcd96sm7ce9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
