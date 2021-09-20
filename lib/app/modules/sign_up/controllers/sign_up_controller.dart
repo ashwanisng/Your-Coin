@@ -5,9 +5,11 @@ import 'package:your_coin/app/modules/entry/controllers/entry_controller.dart';
 class SignUpController extends GetxController {
   //TODO: Implement SignUpController
 
-  TextEditingController emailController = TextEditingController();
+  TextEditingController emailController =
+      TextEditingController(text: "test@test.com");
   TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController = TextEditingController();
+  TextEditingController passwordController =
+      TextEditingController(text: "123456");
 
   // EntryController controller = Get.find();
 

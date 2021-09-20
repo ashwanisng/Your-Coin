@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/enviroment/widgets/custom_buttons.dart';
+import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 import 'package:your_coin/app/modules/sign_in/views/sign_in_view.dart';
 
 import 'package:your_coin/app/modules/sign_up/controllers/sign_up_controller.dart';
@@ -178,26 +179,33 @@ class SignUpView extends GetView<SignUpController> {
                     ),
                     SizedBox(height: 50),
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 12),
-                      child: CustomButton(
-                        buttonName: Text(
-                          "SIGN UP",
-                          style:
-                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
+                        child: GetBuilder<FirebaseAuthController>(
+                          builder: (value) => CustomButton(
+                            buttonName: Text(
+                              "SIGN UP",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2!
+                                  .copyWith(
                                     color: Env.colors.white,
                                     fontFamily: 'Nunito',
                                     fontSize: 18,
                                     fontWeight: FontWeight.w700,
                                     letterSpacing: 2.0,
                                   ),
-                        ),
-                        onTap: () {
-                          // TODO SIGNUP Function
-                        },
-                        color: Env.colors.primaryDarkIndigo,
-                        borderColor: Env.colors.white,
-                      ),
-                    ),
+                            ),
+                            onTap: () {
+                              // TODO SIGNUP Function
+
+                              value.signUpWithEmailAndPassword(
+                                  controller.emailController.text,
+                                  controller.passwordController.text);
+                            },
+                            color: Env.colors.primaryDarkIndigo,
+                            borderColor: Env.colors.white,
+                          ),
+                        )),
                     SizedBox(
                       height: 40,
                     ),

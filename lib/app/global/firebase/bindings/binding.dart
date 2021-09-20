@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:your_coin/app/global/binding/firabse_auth.dart';
+import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
 import 'package:your_coin/app/modules/market/controllers/market_controller.dart';
 import 'package:your_coin/app/modules/news/controllers/news_controller.dart';
