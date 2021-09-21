@@ -32,7 +32,7 @@ class SignUpView extends GetView<SignUpController> {
                         child: Text(
                           "Create a New Account!",
                           style: TextStyle(
-                            color: Env.colors.primaryDarkIndigo,
+                            color: Theme.of(context).colorScheme.primary,
                             fontSize: 36,
                             fontWeight: FontWeight.bold,
                             fontFamily: 'Nunito',
@@ -67,12 +67,13 @@ class SignUpView extends GetView<SignUpController> {
                         decoration: InputDecoration(
                           filled: true,
                           enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Env.colors.primaryDarkIndigo),
+                            borderSide: BorderSide(
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                                color: Env.colors.primaryDarkIndigo,
+                                color: Theme.of(context).colorScheme.primary,
                                 width: 1.0),
                           ),
                           border: OutlineInputBorder(
@@ -84,11 +85,11 @@ class SignUpView extends GetView<SignUpController> {
                           hintText: 'Name',
                           hintStyle: TextStyle(color: Env.colors.primaryGray),
                           labelText: 'Name',
-                          labelStyle:
-                              TextStyle(color: Env.colors.primaryDarkIndigo),
+                          labelStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary),
                           prefixIcon: Icon(
                             CupertinoIcons.person,
-                            color: Env.colors.primaryDarkIndigo,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                         keyboardType: TextInputType.emailAddress,
@@ -107,12 +108,12 @@ class SignUpView extends GetView<SignUpController> {
                         decoration: InputDecoration(
                           filled: true,
                           enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Env.colors.primaryDarkIndigo),
+                            borderSide: BorderSide(
+                                color: Theme.of(context).colorScheme.primary),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                                color: Env.colors.primaryDarkIndigo,
+                                color: Theme.of(context).colorScheme.primary,
                                 width: 1.0),
                           ),
                           border: OutlineInputBorder(
@@ -124,11 +125,11 @@ class SignUpView extends GetView<SignUpController> {
                           hintText: 'Email',
                           hintStyle: TextStyle(color: Env.colors.primaryGray),
                           labelText: 'Email',
-                          labelStyle:
-                              TextStyle(color: Env.colors.primaryDarkIndigo),
+                          labelStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary),
                           prefixIcon: Icon(
                             CupertinoIcons.mail,
-                            color: Env.colors.primaryDarkIndigo,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                         keyboardType: TextInputType.emailAddress,
@@ -150,11 +151,11 @@ class SignUpView extends GetView<SignUpController> {
                             filled: true,
                             enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: Env.colors.primaryDarkIndigo),
+                                  color: Theme.of(context).colorScheme.primary),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                  color: Env.colors.primaryDarkIndigo,
+                                  color: Theme.of(context).colorScheme.primary,
                                   width: 1.0),
                             ),
                             border: OutlineInputBorder(
@@ -166,11 +167,11 @@ class SignUpView extends GetView<SignUpController> {
                             hintText: 'Password',
                             hintStyle: TextStyle(color: Env.colors.primaryGray),
                             labelText: 'Password',
-                            labelStyle:
-                                TextStyle(color: Env.colors.primaryDarkIndigo),
+                            labelStyle: TextStyle(
+                                color: Theme.of(context).colorScheme.primary),
                             prefixIcon: Icon(
                               CupertinoIcons.lock,
-                              color: Env.colors.primaryDarkIndigo,
+                              color: Theme.of(context).colorScheme.primary,
                             ),
                             suffixIcon: IconButton(
                               onPressed: () {
@@ -180,11 +181,13 @@ class SignUpView extends GetView<SignUpController> {
                               icon: controller.isVisible.value
                                   ? Icon(
                                       Icons.visibility_off_rounded,
-                                      color: Env.colors.primaryDarkIndigo,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                     )
                                   : Icon(
                                       CupertinoIcons.eye_fill,
-                                      color: Env.colors.primaryDarkIndigo,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                     ),
                             ),
                           ),
@@ -217,7 +220,7 @@ class SignUpView extends GetView<SignUpController> {
                                   controller.emailController.text,
                                   controller.passwordController.text);
                             },
-                            color: Env.colors.primaryDarkIndigo,
+                            color: Theme.of(context).colorScheme.primary,
                             borderColor: Env.colors.white,
                           ),
                         )),
@@ -247,7 +250,7 @@ class SignUpView extends GetView<SignUpController> {
                               Text(
                                 "Sign in with Google",
                                 style: TextStyle(
-                                  color: Env.colors.primaryDarkIndigo,
+                                  color: Theme.of(context).colorScheme.primary,
                                   fontFamily: "Nunito",
                                   fontWeight: FontWeight.w700,
                                   fontSize: 18,
@@ -275,7 +278,7 @@ class SignUpView extends GetView<SignUpController> {
                             child: Text(
                               "Login",
                               style: TextStyle(
-                                color: Env.colors.primaryDarkIndigo,
+                                color: Theme.of(context).colorScheme.primary,
                                 fontSize: 18,
                               ),
                             ),

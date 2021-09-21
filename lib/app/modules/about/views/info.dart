@@ -22,32 +22,32 @@ class Info extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: mainHeading(),
+                child: mainHeading(context),
               ),
               SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                child: heading2(),
+                child: heading2(context),
               ),
               SizedBox(height: 5),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                child: heading3(),
+                child: heading3(context),
               ),
               Divider(thickness: 2),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                child: heading4(),
+                child: heading4(context),
               ),
               Divider(thickness: 2),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                child: heading5(),
+                child: heading5(context),
               ),
               Divider(thickness: 2),
               Padding(
                 padding: const EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                child: heading6(),
+                child: heading6(context),
               ),
             ],
           ),
@@ -56,18 +56,14 @@ class Info extends StatelessWidget {
     );
   }
 
-  Container heading6() {
+  Container heading6(BuildContext context) {
     return Container(
       child: RichText(
         text: TextSpan(
           children: [
             TextSpan(
               text: "You can also get relevant and current news ",
-              style: TextStyle(
-                color: Env.colors.black,
-                fontFamily: 'Nunito',
-                fontSize: 17,
-              ),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             TextSpan(
               text: "Click Here",
@@ -84,11 +80,7 @@ class Info extends StatelessWidget {
             TextSpan(
               text:
                   " about the crypto field, not just that you can read and share news with others if you like!",
-              style: TextStyle(
-                color: Env.colors.black,
-                fontFamily: 'Nunito',
-                fontSize: 17,
-              ),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
         ),
@@ -96,18 +88,14 @@ class Info extends StatelessWidget {
     );
   }
 
-  Container heading5() {
+  Container heading5(BuildContext context) {
     return Container(
       child: RichText(
         text: TextSpan(
           children: [
             TextSpan(
               text: 'Get the current status of top 100 crypto coins ',
-              style: TextStyle(
-                color: Env.colors.black,
-                fontFamily: 'Nunito',
-                fontSize: 17,
-              ),
+              style: Theme.of(context).textTheme.bodyText1,
             ),
             TextSpan(
               text: "Click Here",
@@ -123,12 +111,8 @@ class Info extends StatelessWidget {
             ),
             TextSpan(
               text:
-                  ",along with details like Current Price, Market Cap, All time high/low etc of each coin.",
-              style: TextStyle(
-                color: Env.colors.black,
-                fontFamily: 'Nunito',
-                fontSize: 17,
-              ),
+                  ", along with details like Current Price, Market Cap, All time high/low etc of each coin.",
+              style: Theme.of(context).textTheme.bodyText1,
             )
           ],
         ),
@@ -136,7 +120,7 @@ class Info extends StatelessWidget {
     );
   }
 
-  Column heading4() {
+  Column heading4(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -144,13 +128,8 @@ class Info extends StatelessWidget {
             text: TextSpan(
               children: [
                 TextSpan(
-                  text: "You can add your all crypto investment ",
-                  style: TextStyle(
-                    color: Env.colors.black,
-                    fontFamily: 'Nunito',
-                    fontSize: 17,
-                  ),
-                ),
+                    text: "You can add your all crypto investment ",
+                    style: Theme.of(context).textTheme.bodyText1),
                 TextSpan(
                   text: "Click Here ",
                   style: TextStyle(
@@ -167,29 +146,17 @@ class Info extends StatelessWidget {
                 ),
                 TextSpan(
                   text: " in-order to track at one place.",
-                  style: TextStyle(
-                    color: Env.colors.black,
-                    fontFamily: 'Nunito',
-                    fontSize: 17,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 TextSpan(
                   text:
                       " Your crucial and valuable data is stored only on your device (local storage) and not in a third party service, so it's totally secure!",
-                  style: TextStyle(
-                    color: Env.colors.black,
-                    fontFamily: 'Nunito',
-                    fontSize: 17,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
                 TextSpan(
                   text:
                       " However, because it is stored in your local storage on one specific device, you cannot access it from another device.",
-                  style: TextStyle(
-                    color: Env.colors.black,
-                    fontFamily: 'Nunito',
-                    fontSize: 17,
-                  ),
+                  style: Theme.of(context).textTheme.bodyText1,
                 ),
               ],
             ),
@@ -203,7 +170,7 @@ class Info extends StatelessWidget {
               style: TextStyle(
                 color: Colors.pinkAccent,
                 fontFamily: 'Nunito',
-                fontSize: 17,
+                fontSize: 16,
               ),
             ),
           ),
@@ -212,81 +179,50 @@ class Info extends StatelessWidget {
     );
   }
 
-  Container heading3() {
+  Container heading3(BuildContext context) {
     return Container(
         child: RichText(
       text: TextSpan(
         children: [
           TextSpan(
-            text:
-                "It is designed and developed to bring all your cryptocurrency investments into one place.",
-            style: TextStyle(
-              color: Env.colors.black,
-              fontFamily: 'Nunito',
-              fontSize: 17,
-            ),
-          ),
+              text:
+                  "It is designed and developed to bring all your cryptocurrency investments into one place.",
+              style: Theme.of(context).textTheme.bodyText1),
           TextSpan(
-            text:
-                "If you invest in different platforms at times, it becomes quite problematic to track your each investment over time, hence ",
-            style: TextStyle(
-              color: Env.colors.black,
-              fontFamily: 'Nunito',
-              fontSize: 17,
-            ),
-          ),
+              text:
+                  "If you invest in different platforms at times, it becomes quite problematic to track your each investment over time, hence ",
+              style: Theme.of(context).textTheme.bodyText1),
           TextSpan(
-            text: "Your Coin ",
-            style: TextStyle(
-              color: Env.colors.primaryDarkIndigo,
-              fontFamily: 'Nunito',
-              fontSize: 18,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+              text: "Your Coin ", style: Theme.of(context).textTheme.bodyText1),
           TextSpan(
             text: "is here to solve this problem.",
-            style: TextStyle(
-              color: Env.colors.black,
-              fontFamily: 'Nunito',
-              fontSize: 17,
-            ),
+            style: Theme.of(context).textTheme.bodyText1,
           ),
         ],
       ),
     ));
   }
 
-  Container heading2() {
+  Container heading2(BuildContext context) {
     return Container(
       child: RichText(
         text: TextSpan(children: [
           TextSpan(
             text:
                 "Your Coin is a one stop platform for all your cryptocurrency investments!",
-            style: TextStyle(
-              color: Env.colors.primaryDarkIndigo,
-              fontFamily: 'Nunito',
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+            style: Theme.of(context).textTheme.bodyText1,
           )
         ]),
       ),
     );
   }
 
-  Container mainHeading() {
+  Container mainHeading(BuildContext context) {
     return Container(
       child: RichText(
         text: TextSpan(
           text: "What is Your Coin? And How to use it!",
-          style: TextStyle(
-            color: Env.colors.black,
-            fontFamily: 'Nunito',
-            fontWeight: FontWeight.bold,
-            fontSize: 25,
-          ),
+          style: Theme.of(context).textTheme.headline5,
         ),
       ),
     );

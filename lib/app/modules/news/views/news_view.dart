@@ -51,32 +51,31 @@ class NewsView extends GetView<NewsController> {
                             SizedBox(height: 5),
                             Text(
                               controller.newsList[index].title.toString(),
-                              style: TextStyle(
-                                color: Env.colors.black,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w900,
-                              ),
+                              style: Theme.of(context).textTheme.headline5,
                             ),
                             SizedBox(height: 5),
                             Text(
-                              controller.newsList[index].description.toString(),
-                              style: TextStyle(
-                                color: Env.colors.primaryGray,
-                                fontSize: 16,
-                              ),
-                            ),
+                                controller.newsList[index].description
+                                    .toString(),
+                                style: Theme.of(context).textTheme.bodyText1),
                             SizedBox(height: 10),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(formatted),
+                                Text(
+                                  formatted,
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
                                 IconButton(
-                                    onPressed: () {
-                                      controller.shareFun(
-                                          controller.newsList[index].url,
-                                          controller.newsList[index].title!);
-                                    },
-                                    icon: Icon(CupertinoIcons.share))
+                                  onPressed: () {
+                                    controller.shareFun(
+                                        controller.newsList[index].url,
+                                        controller.newsList[index].title!);
+                                  },
+                                  icon: Icon(
+                                    CupertinoIcons.share,
+                                  ),
+                                ),
                               ],
                             ),
                           ],

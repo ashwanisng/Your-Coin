@@ -1,33 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:your_coin/app/enviroment/utils/env.dart';
 
 class YourTheme {
   static const Color _lightScaffoldColor = Colors.white;
   static const Color _lightPrimaryColor = Colors.white;
   static const Color _lightIconColor = Color(0xFF2f80ED);
   static const Color _lightPrimaryVariantColor = Color(0xFFe5e5e5);
-  static const Color _lightColorSchemePrimary = Color(0xfffabc57);
+  static const Color _lightColorSchemePrimary = Color(0xFF2128BD);
   static const Color _lightAccentColor = Color(0xff2f80ed);
 
   // static const Color _darkCursorColor = Color(0xff34AD64);
   static const Color _darkAccentColor = Color(0xff34AD64);
   static const Color _darkScaffoldColor = Color(0xff18191A);
-  static const Color _darkPrimaryColor = Colors.black;
+  static const Color _darkPrimaryColor = Color(0xff151b27);
   static const Color _darkPrimaryVariantColor = Colors.black;
   static const Color _darkIconColor = Colors.white70;
-  static const Color _darkColorSchemePrimary = Color(0xfffabc57);
-
-  // final Color primaryDarkIndigo = Color(0xFF2128BD);
-  // final Color leafGreen = const Color(0xFF6FCF97);
-
-  // final Color white = Color(0xFFF8F8F8);
-  // final Color black = Color(0xFF090719);
-  // final Color red = Color(0xFFE73322);
-
-  // final Color secondaryGreen = const Color(0xFF24947B);
-  // final Color accentGreen = const Color(0xFFE3FEF8);
-  // final Color primaryGray = const Color(0xFF6D7D7C);
-  // final Color primaryBlue = const Color(0xFF0075FF);
-  // final Color primaryGreen = const Color(0xFF25D59C);
+  static const Color _darkColorSchemePrimary = Color(0xff25c0b7);
 
   static final lightTheme = ThemeData(
     scaffoldBackgroundColor: _lightScaffoldColor,
@@ -36,6 +24,7 @@ class YourTheme {
       color: _lightIconColor,
     ),
     fontFamily: 'Nunito',
+    textTheme: _lightTextTheme,
     colorScheme: const ColorScheme.light(
       primaryVariant: _lightPrimaryVariantColor,
       primary: _lightColorSchemePrimary,
@@ -51,11 +40,90 @@ class YourTheme {
       color: _darkIconColor,
     ),
     fontFamily: 'Nunito',
+    textTheme: _darkTextTheme,
     colorScheme: const ColorScheme.dark(
       primaryVariant: _darkPrimaryVariantColor,
       primary: _darkColorSchemePrimary,
       secondary: Colors.black,
       secondaryVariant: _lightScaffoldColor,
     ).copyWith(secondary: _darkAccentColor),
+  );
+
+  static const TextTheme _lightTextTheme = TextTheme(
+    headline4: TextStyle(
+      fontFamily: 'Nunito',
+      fontWeight: FontWeight.w700,
+      color: Colors.black,
+      fontSize: 24.0,
+    ),
+    headline5: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontFamily: 'Nunito',
+      fontSize: 24,
+    ),
+    headline6: TextStyle(
+      fontSize: 32,
+      fontWeight: FontWeight.w700,
+      fontFamily: 'Nunito',
+      color: Color(0xFF2128BD),
+    ),
+    bodyText1: TextStyle(
+      fontFamily: 'Nunito',
+      fontWeight: FontWeight.w400,
+      color: Colors.black,
+      fontSize: 14.0,
+    ),
+    bodyText2: TextStyle(
+      fontFamily: 'Nunito',
+      fontWeight: FontWeight.w600,
+      color: Colors.black,
+      fontSize: 14.0,
+    ),
+    headline1: TextStyle(
+      fontFamily: 'Nunito',
+      color: Colors.grey,
+      fontSize: 14.0,
+    ),
+    caption: TextStyle(
+      fontFamily: 'Nunito',
+      fontWeight: FontWeight.w400,
+      color: Color(0xFF2128BD),
+      fontSize: 18.0,
+    ),
+  );
+
+  static const TextTheme _darkTextTheme = TextTheme(
+    headline4: TextStyle(
+      fontWeight: FontWeight.w600,
+      fontSize: 18,
+    ),
+    headline5: TextStyle(
+      fontWeight: FontWeight.w700,
+      fontSize: 24,
+    ),
+    headline6: TextStyle(
+      fontSize: 28,
+      fontWeight: FontWeight.w600,
+      color: Color(0xFF2128BD),
+    ),
+    bodyText1: TextStyle(
+      fontSize: 14,
+      color: Colors.white,
+    ),
+    bodyText2: TextStyle(
+      fontSize: 18,
+      color: Colors.white,
+      fontWeight: FontWeight.w600,
+    ),
+    headline1: TextStyle(
+      fontFamily: 'Nunito',
+      color: Colors.grey,
+      fontSize: 14.0,
+    ),
+    caption: TextStyle(
+      fontWeight: FontWeight.w400,
+      color: Color(0xFF2128BD),
+      fontSize: 18.0,
+    ),
   );
 }

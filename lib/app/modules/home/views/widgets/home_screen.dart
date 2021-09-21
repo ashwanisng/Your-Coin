@@ -20,7 +20,7 @@ class HomeScreenView extends GetView<HomeController> {
             Expanded(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 60),
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 50),
                 child: ClipRRect(
                   borderRadius: BorderRadius.all(Radius.circular(20)),
                   child: Container(
@@ -66,36 +66,63 @@ class HomeScreenView extends GetView<HomeController> {
                                   ],
                                 ),
                               ),
-                              SizedBox(height: 20),
-                              Row(
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 20),
-                                    child: Text(
-                                      '\$ ${controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value}'
-                                          .toString(),
-                                      style: TextStyle(
-                                        color: Env.colors.white,
-                                        fontSize: 32,
-                                        fontWeight: FontWeight.w900,
-                                        fontFamily: 'Nunito',
+                              SizedBox(height: 10),
+                              Padding(
+                                padding: const EdgeInsets.only(left: 20),
+                                child: RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: "Total Balance: ",
+                                        style: TextStyle(
+                                          color: Env.colors.white,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w900,
+                                          fontFamily: 'Nunito',
+                                        ),
                                       ),
-                                    ),
+                                      TextSpan(
+                                        text:
+                                            '\$${controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value}'
+                                                .toString(),
+                                        style: TextStyle(
+                                          color: Env.colors.white,
+                                          fontSize: 32,
+                                          fontWeight: FontWeight.w900,
+                                          fontFamily: 'Nunito',
+                                        ),
+                                      )
+                                    ],
                                   ),
-                                ],
+                                ),
                               ),
                               SizedBox(height: 5),
                               Padding(
-                                padding: EdgeInsets.symmetric(horizontal: 20),
-                                child: Text(
-                                  '\$ ${controller.exchangeList[index].currentPrice!} ${controller.exchangeList[index].symbol!.toUpperCase()}'
-                                      .toString(),
-                                  style: TextStyle(
-                                    color: Env.colors.white,
-                                    fontSize: 26,
-                                    fontWeight: FontWeight.w700,
-                                    fontFamily: 'Nunito',
+                                padding: const EdgeInsets.only(left: 20),
+                                child: RichText(
+                                  text: TextSpan(
+                                    children: [
+                                      TextSpan(
+                                        text: "Market Value: ",
+                                        style: TextStyle(
+                                          color: Env.colors.white,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.w900,
+                                          fontFamily: 'Nunito',
+                                        ),
+                                      ),
+                                      TextSpan(
+                                        text:
+                                            '\$${controller.exchangeList[index].currentPrice!} ${controller.exchangeList[index].symbol!.toUpperCase()}'
+                                                .toString(),
+                                        style: TextStyle(
+                                          color: Env.colors.white,
+                                          fontSize: 26,
+                                          fontWeight: FontWeight.w700,
+                                          fontFamily: 'Nunito',
+                                        ),
+                                      )
+                                    ],
                                   ),
                                 ),
                               ),

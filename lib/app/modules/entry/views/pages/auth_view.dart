@@ -22,7 +22,7 @@ class AuthView extends StatelessWidget {
                 height: 200,
                 child: SvgPicture.asset(
                   'assets/images/rocket.svg',
-                  color: Env.colors.primaryDarkIndigo,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
               ),
             ),
@@ -35,7 +35,7 @@ class AuthView extends StatelessWidget {
                 child: Text(
                   "YOUR COIN",
                   style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Env.colors.primaryDarkIndigo,
+                        color: Theme.of(context).colorScheme.primary,
                         fontFamily: 'Nunito',
                         fontSize: 28,
                         fontWeight: FontWeight.w700,
@@ -68,7 +68,7 @@ class AuthView extends StatelessWidget {
                     () => SignInView(),
                   );
                 },
-                color: Env.colors.primaryDarkIndigo,
+                color: Theme.of(context).colorScheme.primary,
                 borderColor: Env.colors.white,
               ),
             ),
@@ -79,7 +79,7 @@ class AuthView extends StatelessWidget {
                 buttonName: Text(
                   "SIGN UP",
                   style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                        color: Env.colors.primaryDarkIndigo,
+                        color: Theme.of(context).colorScheme.primary,
                         fontFamily: 'Nunito',
                         fontSize: 18,
                         fontWeight: FontWeight.w700,

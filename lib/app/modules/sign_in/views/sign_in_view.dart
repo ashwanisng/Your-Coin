@@ -9,12 +9,14 @@ import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 import 'package:your_coin/app/modules/sign_in/controllers/sign_in_controller.dart';
 
 class SignInView extends GetView<SignInController> {
+  final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
+            key: _formKey,
             child: Padding(
               padding: const EdgeInsets.all(12.0),
               child: Column(
@@ -30,7 +32,7 @@ class SignInView extends GetView<SignInController> {
                       child: Text(
                         "Welcome Back!",
                         style: TextStyle(
-                          color: Env.colors.primaryDarkIndigo,
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 36,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Nunito',
@@ -65,12 +67,13 @@ class SignInView extends GetView<SignInController> {
                       decoration: InputDecoration(
                         filled: true,
                         enabledBorder: OutlineInputBorder(
-                          borderSide:
-                              BorderSide(color: Env.colors.primaryDarkIndigo),
+                          borderSide: BorderSide(
+                              color: Theme.of(context).colorScheme.primary),
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                              color: Env.colors.primaryDarkIndigo, width: 1.0),
+                              color: Theme.of(context).colorScheme.primary,
+                              width: 1.0),
                         ),
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.all(
@@ -79,13 +82,14 @@ class SignInView extends GetView<SignInController> {
                         ),
                         fillColor: Color(0xFFF4F5F8),
                         hintText: 'Email',
-                        hintStyle: TextStyle(color: Env.colors.primaryGray),
+                        hintStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.primary),
                         labelText: 'Email',
-                        labelStyle:
-                            TextStyle(color: Env.colors.primaryDarkIndigo),
+                        labelStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.primary),
                         prefixIcon: Icon(
                           CupertinoIcons.mail,
-                          color: Env.colors.primaryDarkIndigo,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                       keyboardType: TextInputType.emailAddress,
@@ -106,13 +110,13 @@ class SignInView extends GetView<SignInController> {
                         decoration: InputDecoration(
                           filled: true,
                           enabledBorder: OutlineInputBorder(
-                            borderSide:
-                                BorderSide(color: Env.colors.primaryDarkIndigo),
+                            borderSide: BorderSide(
+                                color: Theme.of(context).colorScheme.primary),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                                color: Env.colors.primaryDarkIndigo,
-                                width: 1.0),
+                                color: Theme.of(context).colorScheme.primary,
+                                width: 2.0),
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(
@@ -123,11 +127,11 @@ class SignInView extends GetView<SignInController> {
                           hintText: 'Password',
                           hintStyle: TextStyle(color: Env.colors.primaryGray),
                           labelText: 'Password',
-                          labelStyle:
-                              TextStyle(color: Env.colors.primaryDarkIndigo),
+                          labelStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary),
                           prefixIcon: Icon(
                             CupertinoIcons.lock,
-                            color: Env.colors.primaryDarkIndigo,
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                           suffixIcon: IconButton(
                             onPressed: () {
@@ -137,11 +141,13 @@ class SignInView extends GetView<SignInController> {
                             icon: controller.isVisible.value
                                 ? Icon(
                                     Icons.visibility_off_rounded,
-                                    color: Env.colors.primaryDarkIndigo,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                   )
                                 : Icon(
                                     CupertinoIcons.eye_fill,
-                                    color: Env.colors.primaryDarkIndigo,
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                   ),
                           ),
                         ),
@@ -172,7 +178,7 @@ class SignInView extends GetView<SignInController> {
                               controller.emailController.text,
                               controller.passwordController.text);
                         },
-                        color: Env.colors.primaryDarkIndigo,
+                        color: Theme.of(context).colorScheme.primary,
                         borderColor: Env.colors.white,
                       ),
                     ),
@@ -207,7 +213,7 @@ class SignInView extends GetView<SignInController> {
                               Text(
                                 "Sign in with Google",
                                 style: TextStyle(
-                                  color: Env.colors.primaryDarkIndigo,
+                                  color: Theme.of(context).colorScheme.primary,
                                   fontFamily: "Nunito",
                                   fontWeight: FontWeight.w700,
                                   fontSize: 18,
@@ -236,7 +242,7 @@ class SignInView extends GetView<SignInController> {
                           child: Text(
                             "Signup",
                             style: TextStyle(
-                              color: Env.colors.primaryDarkIndigo,
+                              color: Theme.of(context).colorScheme.primary,
                               fontSize: 18,
                             ),
                           ),

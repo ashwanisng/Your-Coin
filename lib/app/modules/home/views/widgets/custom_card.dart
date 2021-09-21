@@ -18,12 +18,13 @@ class CustomCard extends GetView<HomeController> {
             child: ListTile(
               leading: Image.network(data.image!),
               title: Text(
-                data.id!,
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                ),
+                data.id!.toUpperCase(),
+                style: Theme.of(context).textTheme.bodyText2,
               ),
-              subtitle: Text('Rank ${data.marketCapRank}'),
+              subtitle: Text(
+                'Rank ${data.marketCapRank}',
+                style: Theme.of(context).textTheme.headline1,
+              ),
               trailing: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -31,10 +32,7 @@ class CustomCard extends GetView<HomeController> {
                     child: RichText(
                       text: TextSpan(
                         text: '\$ ${data.currentPrice!.toStringAsFixed(2)}',
-                        style: TextStyle(
-                          color: Env.colors.black,
-                          fontFamily: 'Nunito',
-                        ),
+                        style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ),
                   ),

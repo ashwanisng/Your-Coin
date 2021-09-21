@@ -23,8 +23,10 @@ class LossersView extends GetView<MarketController> {
                           ListTile(
                             leading: Image.network(data.image!),
                             title: Text(data.name!),
-                            subtitle:
-                                Text(data.priceChange24H!.toStringAsFixed(2)),
+                            subtitle: Text(
+                              data.priceChange24H!.toStringAsFixed(2),
+                              style: Theme.of(context).textTheme.headline1,
+                            ),
                             trailing: Text(data.marketCapChangePercentage24H!
                                 .toStringAsFixed(2)),
                           ),

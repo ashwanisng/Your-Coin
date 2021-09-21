@@ -26,34 +26,34 @@ class HomeView extends GetView<HomeController> {
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(top: 12),
         child: BottomNavigationBar(
-          backgroundColor: Env.colors.white,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           type: BottomNavigationBarType.fixed,
           items: [
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.home,
-                color: Env.colors.primaryBlue,
+                color: Theme.of(context).colorScheme.primary,
               ),
               label: 'Home',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 Icons.trending_up_sharp,
-                color: Env.colors.primaryBlue,
+                color: Theme.of(context).colorScheme.primary,
               ),
               label: 'Market',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.news_solid,
-                color: Env.colors.primaryBlue,
+                color: Theme.of(context).colorScheme.primary,
               ),
               label: 'News',
             ),
             BottomNavigationBarItem(
               icon: Icon(
                 CupertinoIcons.person,
-                color: Env.colors.primaryBlue,
+                color: Theme.of(context).colorScheme.primary,
               ),
               label: 'About',
             ),
