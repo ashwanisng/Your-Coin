@@ -43,8 +43,8 @@ class CustomCard extends GetView<HomeController> {
                       overflow: TextOverflow.ellipsis,
                       text: TextSpan(
                         text: data.priceChangePercentage24H!.isNegative
-                            ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}'
-                            : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}',
+                            ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}%'
+                            : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}%',
                         style: TextStyle(
                             color: data.priceChangePercentage24H!.isNegative
                                 ? Colors.red
