@@ -2,9 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:your_coin/app/enviroment/utils/env.dart';
-import 'package:your_coin/app/enviroment/utils/theme.dart';
-import 'package:your_coin/app/enviroment/utils/theme_service.dart';
 
 import 'package:your_coin/app/modules/about/controllers/about_controller.dart';
 import 'package:your_coin/app/modules/about/views/info.dart';
@@ -13,55 +10,79 @@ class AboutView extends GetView<AboutController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: Text('AboutView'),
+        title: Text('Setting'),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         centerTitle: true,
       ),
-      body: ListView(
-        children: [
-          Card(
-            child: ListTile(
-              leading: Icon(Icons.wb_sunny),
-              title: Text(
-                'Dark Mode',
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                  color: Env.colors.black,
-                ),
+      body: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 60,
+              child: Card(
+                child: ListTile(
+                    // leading: Icon(Icons.wb_sunny),
+                    title: Text(
+                      'Dark Mode',
+                      style: Theme.of(context).textTheme.bodyText2,
+                    ),
+                    trailing: Obx(
+                      () => Switch(
+                        value: controller.isDark.value,
+                        onChanged: (_) {
+                          controller.changeTheme();
+                          print(controller.isDark.value);
+                        },
+                      ),
+                    )),
               ),
-              trailing: Obx(
-                () => Switch(
-                  value: controller.isDark.value,
-                  onChanged: (value) {
-                    controller.changeTheme(value);
-                    print(controller.isDark);
-                  },
+            ),
+            SizedBox(height: 8),
+            SizedBox(
+              height: 60,
+              child: Card(
+                elevation: 2,
+                child: ListTile(
+                  // leading: Icon(CupertinoIcons.question),
+                  title: Text('About',
+                      style: Theme.of(context).textTheme.bodyText2),
+                  trailing: IconButton(
+                    onPressed: () {
+                      Get.to(() => Info());
+                    },
+                    icon: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 8),
-          Card(
-            elevation: 2,
-            child: ListTile(
-              leading: Icon(CupertinoIcons.question),
-              title: Text(
-                'About',
-                style: TextStyle(
-                  fontFamily: 'Nunito',
-                  color: Env.colors.black,
+            SizedBox(height: 8),
+            SizedBox(
+              height: 60,
+              child: Card(
+                elevation: 2,
+                child: ListTile(
+                  title: Text(
+                    'Sign Out',
+                    style: Theme.of(context).textTheme.bodyText2,
+                  ),
+                  trailing: IconButton(
+                    icon: Icon(Icons.logout),
+                    color: Colors.grey,
+                    onPressed: () {
+                      controller.firebaseAuthController.signOut();
+                    },
+                  ),
                 ),
               ),
-              trailing: IconButton(
-                onPressed: () {
-                  Get.to(() => Info());
-                },
-                icon: Icon(CupertinoIcons.arrow_right_square),
-              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

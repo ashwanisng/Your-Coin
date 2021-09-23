@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/data/models/exchange_model.dart';
 import 'package:your_coin/app/global/services/api/exchange.dart';
-import 'package:your_coin/app/modules/entry/controllers/entry_controller.dart';
 import 'package:your_coin/app/modules/market/controllers/market_controller.dart';
 
 class HomeController extends GetxController {

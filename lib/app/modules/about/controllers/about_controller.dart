@@ -1,22 +1,31 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:your_coin/app/enviroment/utils/theme.dart';
 import 'package:your_coin/app/enviroment/utils/theme_service.dart';
+import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 
 class AboutController extends GetxController {
   //TODO: Implement AboutController
 
   var isDark = false.obs;
 
-  void changeTheme(value) {
-    ThemeService().changeThemeMode();
+  FirebaseAuthController firebaseAuthController =
+      Get.find<FirebaseAuthController>();
+
+  void changeTheme() {
+    try {
+      isDark.value = false;
+      ThemeService().changeThemeMode();
+    } catch (e) {
+      print(e);
+    } finally {
+      isDark.value = true;
+    }
   }
 
   void changeValue() {
     if (ThemeService().isSaveDarkMode() == true) {
-      isDark.value = true;
+      // isDark.value = true;
     } else {
-      isDark.value = false;
+      // isDark.value = false;
     }
   }
 

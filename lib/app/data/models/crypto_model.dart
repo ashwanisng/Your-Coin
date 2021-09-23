@@ -47,68 +47,61 @@ class CryptoCurrency {
   int? marketCapRank;
   int? fullyDilutedValuation;
   int? totalVolume;
-  double? high24H;
-  double? low24H;
-  double? priceChange24H;
-  double? priceChangePercentage24H;
-  double? marketCapChange24H;
-  double? marketCapChangePercentage24H;
-  double? circulatingSupply;
-  double? totalSupply;
-  double? maxSupply;
-  double? ath;
-  double? athChangePercentage;
+  dynamic high24H;
+  dynamic low24H;
+  dynamic priceChange24H;
+  dynamic priceChangePercentage24H;
+  dynamic marketCapChange24H;
+  dynamic marketCapChangePercentage24H;
+  dynamic circulatingSupply;
+  dynamic totalSupply;
+  dynamic maxSupply;
+  dynamic ath;
+  dynamic athChangePercentage;
   DateTime? athDate;
-  double? atl;
-  double? atlChangePercentage;
+  dynamic atl;
+  dynamic atlChangePercentage;
   DateTime? atlDate;
   Roi? roi;
   DateTime? lastUpdated;
-  double? priceChangePercentage1HInCurrency;
+  dynamic priceChangePercentage1HInCurrency;
 
   factory CryptoCurrency.fromJson(Map<String, dynamic> json) => CryptoCurrency(
         id: json["id"],
         symbol: json["symbol"],
         name: json["name"],
         image: json["image"],
-        currentPrice: json["current_price"] == null
-            ? 0.0
-            : json["current_price"].toDouble(),
+        currentPrice: json["current_price"] == null ? 0 : json["current_price"],
         marketCap: json["market_cap"],
         marketCapRank: json["market_cap_rank"],
         fullyDilutedValuation: json["fully_diluted_valuation"] == null
             ? null
             : json["fully_diluted_valuation"],
         totalVolume: json["total_volume"],
-        high24H: json["high_24h"] == null ? 0.0 : json["high_24h"].toDouble(),
-        low24H: json["low_24h"] == null ? 0.0 : json["low_24h"].toDouble(),
-        priceChange24H: json["price_change_24h"] == null
-            ? 0.0
-            : json["price_change_24h"].toDouble(),
+        high24H: json["high_24h"] == null ? 0 : json["high_24h"],
+        low24H: json["low_24h"] == null ? 0 : json["low_24h"],
+        priceChange24H:
+            json["price_change_24h"] == null ? 0 : json["price_change_24h"],
         priceChangePercentage24H: json["price_change_percentage_24h"] == null
-            ? 0.0
-            : json["price_change_percentage_24h"].toDouble(),
+            ? 0
+            : json["price_change_percentage_24h"],
         marketCapChange24H: json["market_cap_change_24h"] == null
-            ? 0.0
-            : json["market_cap_change_24h"].toDouble(),
-        marketCapChangePercentage24H:
-            json["market_cap_change_percentage_24h"].toDouble(),
-        circulatingSupply: json["circulating_supply"].toDouble(),
-        totalSupply: json["total_supply"] == null
-            ? null
-            : json["total_supply"].toDouble(),
-        maxSupply:
-            json["max_supply"] == null ? null : json["max_supply"].toDouble(),
-        ath: json["ath"].toDouble(),
-        athChangePercentage: json["ath_change_percentage"].toDouble(),
+            ? 0
+            : json["market_cap_change_24h"],
+        marketCapChangePercentage24H: json["market_cap_change_percentage_24h"],
+        circulatingSupply: json["circulating_supply"],
+        totalSupply: json["total_supply"] == null ? null : json["total_supply"],
+        maxSupply: json["max_supply"] == null ? null : json["max_supply"],
+        ath: json["ath"],
+        athChangePercentage: json["ath_change_percentage"],
         athDate: DateTime.parse(json["ath_date"]),
-        atl: json["atl"].toDouble(),
-        atlChangePercentage: json["atl_change_percentage"].toDouble(),
+        atl: json["atl"],
+        atlChangePercentage: json["atl_change_percentage"],
         atlDate: DateTime.parse(json["atl_date"]),
         roi: json["roi"] == null ? null : Roi.fromJson(json["roi"]),
         lastUpdated: DateTime.parse(json["last_updated"]),
         priceChangePercentage1HInCurrency:
-            json["price_change_percentage_1h_in_currency"].toDouble(),
+            json["price_change_percentage_1h_in_currency"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -156,9 +149,9 @@ class Roi {
   double? percentage;
 
   factory Roi.fromJson(Map<String, dynamic> json) => Roi(
-        times: json["times"].toDouble(),
+        times: json["times"](),
         currency: currencyValues.map![json["currency"]],
-        percentage: json["percentage"].toDouble(),
+        percentage: json["percentage"](),
       );
 
   Map<String, dynamic> toJson() => {

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:your_coin/app/enviroment/utils/env.dart';
 
 class YourTheme {
   static const Color _lightScaffoldColor = Colors.white;

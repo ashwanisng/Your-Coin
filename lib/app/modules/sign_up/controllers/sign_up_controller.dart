@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:your_coin/app/modules/entry/controllers/entry_controller.dart';
 
 class SignUpController extends GetxController {
   //TODO: Implement SignUpController

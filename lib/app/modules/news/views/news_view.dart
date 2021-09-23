@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:your_coin/app/enviroment/utils/env.dart';
 
 import 'package:your_coin/app/modules/news/controllers/news_controller.dart';
 

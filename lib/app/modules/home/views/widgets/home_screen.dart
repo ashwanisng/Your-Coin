@@ -199,7 +199,7 @@ class HomeScreenView extends GetView<HomeController> {
                           child: CustomTextFormFeild(
                             editingController: controller.coinNameController,
                             lableText: 'Enter Coin Symbol',
-                            hintText: 'Symbol : btc',
+                            hintText: 'Symbol : bitcoin',
                             inputType: TextInputType.text,
                           ),
                         ),
@@ -247,14 +247,16 @@ class HomeScreenView extends GetView<HomeController> {
                                   controller.amountInvested.value = int.parse(
                                       controller.amountController.text);
 
-                                  controller.coinName.value =
-                                      controller.coinNameController.text;
+                                  controller.coinName.value = controller
+                                      .coinNameController.text
+                                      .toLowerCase();
 
                                   controller.numberOfCoin.value = int.parse(
                                       controller.numOfCoinController.text);
 
-                                  controller.dataFetch(
-                                      controller.coinNameController.text);
+                                  controller.dataFetch(controller
+                                      .coinNameController.text
+                                      .toLowerCase());
 
                                   Get.back();
                                 },

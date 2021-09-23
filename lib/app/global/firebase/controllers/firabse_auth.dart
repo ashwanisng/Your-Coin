@@ -1,15 +1,20 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:your_coin/app/enviroment/utils/dialogs.dart/custom_dialog.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
+import 'package:your_coin/app/modules/about/views/about_view.dart';
+import 'package:your_coin/app/modules/entry/views/entry_view.dart';
+import 'package:your_coin/app/modules/entry/views/pages/auth_view.dart';
 import 'package:your_coin/app/modules/home/views/home_view.dart';
 
 class FirebaseAuthController extends GetxController {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
-  // Rx<FireBaseUser> _user = Rx<User>();
-
   GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['email']);
+
+  final userData = GetStorage();
 
   //* Sign in with Google
 
@@ -34,6 +39,7 @@ class FirebaseAuthController extends GetxController {
 
   void signUpWithEmailAndPassword(String email, String password) async {
     try {
+      CustomFullScreenDialog();
       await firebaseAuth
           .createUserWithEmailAndPassword(email: email, password: password)
           .then((user) {
@@ -48,6 +54,8 @@ class FirebaseAuthController extends GetxController {
         colorText: Env.colors.black,
         backgroundColor: Env.colors.leafGreen,
       );
+    } finally {
+      CustomFullScreenDialog.cancelDialog();
     }
   }
 
@@ -55,9 +63,11 @@ class FirebaseAuthController extends GetxController {
 
   void signInWithEmailAndPassword(String email, String password) async {
     try {
+      // CustomFullScreenDialog();
       await firebaseAuth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((user) {
+        userData.write('isLoggedIn', true);
         return Get.offAll(HomeView());
       });
     } catch (e) {
@@ -69,6 +79,17 @@ class FirebaseAuthController extends GetxController {
         backgroundColor: Env.colors.leafGreen,
         snackPosition: SnackPosition.BOTTOM,
       );
+    } finally {
+      // CustomFullScreenDialog.cancelDialog();
     }
+  }
+
+  void signOut() async {
+    await firebaseAuth.signOut().then((value) {
+      userData.remove("isLoggedIn");
+      return Get.offAll(AuthView());
+    });
+    // userData.remove("isLoggedIn");
+    // Get.offAll(AuthView());
   }
 }

@@ -23,11 +23,11 @@ class AllCoinsView extends GetView<MarketController> {
                       leading: Image.network(data.image!),
                       title: Text(data.name!),
                       subtitle: Text(
-                        data.priceChange24H!.toStringAsFixed(2),
+                        data.priceChange24H!.toString(),
                         style: Theme.of(context).textTheme.headline1,
                       ),
                       trailing: Text(
-                        data.marketCapChangePercentage24H!.toStringAsFixed(2),
+                        data.marketCapChangePercentage24H!.toString(),
                       ),
                     ),
                     Divider(),

@@ -1,28 +1,26 @@
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:your_coin/app/modules/entry/views/pages/auth_view.dart';
+import 'package:your_coin/app/modules/home/views/home_view.dart';
 
 class EntryController extends GetxController {
   //TODO: Implement EntryController
 
-  // late GoogleSignIn googleSignIn;
-  // var isSignedIn = false.obs;
-  // FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  final userData = GetStorage();
 
   @override
   void onInit() {
     super.onInit();
-    Future.delayed(Duration(seconds: 2)).then((_) => Get.to(() => AuthView()));
+
+    userData.writeIfNull("isLoggedIn", false);
+
+    Future.delayed(Duration(seconds: 3), () async {
+      checkIfLoggedInOrNot();
+    });
   }
 
   @override
   void onReady() async {
-    // googleSignIn = GoogleSignIn();
-    // ever(isSignedIn, handleAuthStateChanged);
-
-    // isSignedIn.value = await firebaseAuth.currentUser != null;
-    // firebaseAuth.authStateChanges().listen((event) {
-    //   isSignedIn.value = event != null;
-    // });
     super.onReady();
   }
 
@@ -31,11 +29,14 @@ class EntryController extends GetxController {
     super.onClose();
   }
 
-  // void handleAuthStateChanged(isLoggedIn) {
-  //   if (isLoggedIn) {
-  //     Get.offAll(() => HomeView());
-  //   } else {
-  //     Get.offAll(() => AuthView());
-  //   }
-  // }
+  void checkIfLoggedInOrNot() {
+    if (userData.read("isLoggedIn") == true) {
+      Get.offAll(HomeView());
+    } else {
+      Get.offAll(AuthView());
+    }
+    // userData.read("isLoggedIn")
+    //     ? )
+    //     : ;
+  }
 }

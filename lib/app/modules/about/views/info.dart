@@ -4,8 +4,7 @@ import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/modules/home/views/home_view.dart';
-import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
-import 'package:your_coin/app/modules/market/views/widgets/all_coins_page.dart';
+import 'package:your_coin/app/modules/market/views/market_view.dart';
 import 'package:your_coin/app/modules/news/views/news_view.dart';
 
 class Info extends StatelessWidget {
@@ -106,7 +105,7 @@ class Info extends StatelessWidget {
               ),
               recognizer: TapGestureRecognizer()
                 ..onTap = () {
-                  Get.to(() => AllCoinsView());
+                  Get.offAll(MarketView());
                 },
             ),
             TextSpan(
@@ -139,9 +138,7 @@ class Info extends StatelessWidget {
                   ),
                   recognizer: TapGestureRecognizer()
                     ..onTap = () {
-                      Get.to(
-                        () => HomeView(),
-                      );
+                      Get.offAll(HomeView());
                     },
                 ),
                 TextSpan(

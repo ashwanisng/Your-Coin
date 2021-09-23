@@ -3,7 +3,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/enviroment/widgets/custom_buttons.dart';
-import 'package:your_coin/app/modules/sign_in/bindings/sign_in_binding.dart';
 import 'package:your_coin/app/modules/sign_in/views/sign_in_view.dart';
 
 class AuthView extends StatelessWidget {
@@ -20,6 +19,7 @@ class AuthView extends StatelessWidget {
             Flexible(
               child: SizedBox(
                 height: 200,
+                width: 200,
                 child: SvgPicture.asset(
                   'assets/images/rocket.svg',
                   color: Theme.of(context).colorScheme.primary,

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
 
 class CustomCard extends GetView<HomeController> {

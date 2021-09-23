@@ -9,6 +9,8 @@ class SignInController extends GetxController {
   TextEditingController passwordController =
       TextEditingController(text: '123456');
 
+  // FirebaseAuthController firebaseAuthController = Get.find();
+
   var isVisible = true.obs;
 
   void tooglePassword() {
