@@ -35,8 +35,5 @@ class EntryController extends GetxController {
     } else {
       Get.offAll(AuthView());
     }
-    // userData.read("isLoggedIn")
-    //     ? )
-    //     : ;
   }
 }

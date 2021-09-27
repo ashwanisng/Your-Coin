@@ -5,62 +5,66 @@ import 'package:get/get.dart';
 import 'package:your_coin/app/modules/about/views/about_view.dart';
 
 import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
+import 'package:your_coin/app/modules/home/controllers/landing_page.dart';
 import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
 import 'package:your_coin/app/modules/market/views/market_view.dart';
 import 'package:your_coin/app/modules/news/views/news_view.dart';
 
-class HomeView extends GetView<HomeController> {
-  final List<Widget> _children = [
-    HomeScreenView(),
-    MarketView(),
-    NewsView(),
-    AboutView(),
-  ];
+class HomeView extends StatelessWidget {
+  final List<Widget> _children = [];
   @override
   Widget build(BuildContext context) {
+    final LandingPageController landingPageController =
+        Get.put(LandingPageController(), permanent: false);
     return Scaffold(
-      body: Obx(
-        () => _children[controller.slectedIndex.value],
-      ),
+      body: Obx(() => IndexedStack(
+            index: landingPageController.tabIndex.value,
+            children: [
+              HomeScreenView(),
+              MarketView(),
+              NewsView(),
+              AboutView(),
+            ],
+          )),
       bottomNavigationBar: Container(
         padding: EdgeInsets.only(top: 12),
-        child: BottomNavigationBar(
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          type: BottomNavigationBarType.fixed,
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.home,
-                color: Theme.of(context).colorScheme.primary,
+        child: Obx(
+          () => BottomNavigationBar(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            type: BottomNavigationBarType.fixed,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(
+                  CupertinoIcons.home,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                label: 'Home',
               ),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.trending_up_sharp,
-                color: Theme.of(context).colorScheme.primary,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.trending_up_sharp,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                label: 'Market',
               ),
-              label: 'Market',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.news_solid,
-                color: Theme.of(context).colorScheme.primary,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  CupertinoIcons.news_solid,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                label: 'News',
               ),
-              label: 'News',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                CupertinoIcons.person,
-                color: Theme.of(context).colorScheme.primary,
+              BottomNavigationBarItem(
+                icon: Icon(
+                  CupertinoIcons.person,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                label: 'About',
               ),
-              label: 'About',
-            ),
-          ],
-          onTap: (_) {
-            controller.slectedIndex.value = _;
-          },
-          currentIndex: controller.slectedIndex.value,
+            ],
+            onTap: landingPageController.changeTabIndex,
+            currentIndex: landingPageController.tabIndex.value,
+          ),
         ),
       ),
     );

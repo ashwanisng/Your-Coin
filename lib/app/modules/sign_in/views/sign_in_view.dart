@@ -157,38 +157,35 @@ class SignInView extends GetView<SignInController> {
                 ),
                 SizedBox(height: 50),
                 Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
-                  child: GetBuilder<FirebaseAuthController>(
-                    builder: (value) => CustomButton(
-                      buttonName: Text(
-                        "SIGN IN",
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                              color: Env.colors.white,
-                              fontFamily: 'Nunito',
-                              fontSize: 18,
-                              fontWeight: FontWeight.w700,
-                              letterSpacing: 2.0,
-                            ),
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: GetBuilder<FirebaseAuthController>(
+                      builder: (value) => CustomButton(
+                        buttonName: Text(
+                          "SIGN IN",
+                          style:
+                              Theme.of(context).textTheme.bodyText2!.copyWith(
+                                    color: Env.colors.white,
+                                    fontFamily: 'Nunito',
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w700,
+                                    letterSpacing: 2.0,
+                                  ),
+                        ),
+                        onTap: () {
+                          // TODO Login Function
+
+                          value.signInWithEmailAndPassword(
+                              controller.emailController.text,
+                              controller.passwordController.text);
+                        },
+                        color: Theme.of(context).colorScheme.primary,
+                        borderColor: Env.colors.white,
                       ),
-                      onTap: () {
-                        // TODO Login Function
-
-                        // Get.to(HomeView());
-
-                        value.signInWithEmailAndPassword(
-                            controller.emailController.text,
-                            controller.passwordController.text);
-                      },
-                      color: Theme.of(context).colorScheme.primary,
-                      borderColor: Env.colors.white,
-                    ),
-                  ),
-                ),
+                    )),
                 SizedBox(
                   height: 60,
                 ),
                 GetBuilder<FirebaseAuthController>(
-                  init: FirebaseAuthController(),
                   builder: (value) => GestureDetector(
                     onTap: () {
                       value.googleSignInMethod();

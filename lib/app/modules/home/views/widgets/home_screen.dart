@@ -83,7 +83,7 @@ class HomeScreenView extends GetView<HomeController> {
                                       ),
                                       TextSpan(
                                         text:
-                                            '\$${controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value}'
+                                            '\$${(controller.exchangeList[index].currentPrice! * controller.numberOfCoin.value * controller.amountInvested.value).toStringAsFixed(2)}'
                                                 .toString(),
                                         style: TextStyle(
                                           color: Env.colors.white,
@@ -113,7 +113,7 @@ class HomeScreenView extends GetView<HomeController> {
                                       ),
                                       TextSpan(
                                         text:
-                                            '\$${controller.exchangeList[index].currentPrice!} ${controller.exchangeList[index].symbol!.toUpperCase()}'
+                                            '\$${controller.exchangeList[index].currentPrice!.toStringAsFixed(2)} ${controller.exchangeList[index].symbol!.toUpperCase()}'
                                                 .toString(),
                                         style: TextStyle(
                                           color: Env.colors.white,
@@ -156,7 +156,64 @@ class HomeScreenView extends GetView<HomeController> {
                 ],
               ),
             ),
-            Expanded(child: CustomCard()),
+            Expanded(
+              child: ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: controller.marketController.cryptoList.length,
+                itemBuilder: (context, index) {
+                  var data = controller.marketController.cryptoList[index];
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8),
+                    child: Card(
+                      elevation: 2,
+                      child: ListTile(
+                        leading: Image.network(data.image!),
+                        title: Text(
+                          data.id!.toUpperCase(),
+                          style: Theme.of(context).textTheme.bodyText2,
+                        ),
+                        subtitle: Text(
+                          'Rank ${data.marketCapRank}',
+                          style: Theme.of(context).textTheme.headline1,
+                        ),
+                        trailing: Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Flexible(
+                              child: RichText(
+                                text: TextSpan(
+                                  text:
+                                      '\$ ${data.currentPrice!.toStringAsFixed(2)}',
+                                  style: Theme.of(context).textTheme.bodyText2,
+                                ),
+                              ),
+                            ),
+                            Flexible(
+                              child: RichText(
+                                overflow: TextOverflow.ellipsis,
+                                text: TextSpan(
+                                  text: data
+                                          .priceChangePercentage24H!.isNegative
+                                      ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}%'
+                                      : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}%',
+                                  style: TextStyle(
+                                      color: data.priceChangePercentage24H!
+                                              .isNegative
+                                          ? Colors.red
+                                          : Colors.green,
+                                      fontFamily: 'Nunito',
+                                      fontWeight: FontWeight.w700),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),

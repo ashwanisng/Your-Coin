@@ -9,9 +9,5 @@ class AboutBinding extends Bindings {
     Get.lazyPut<AboutController>(
       () => AboutController(),
     );
-
-    Get.lazyPut<FirebaseAuthController>(
-      () => FirebaseAuthController(),
-    );
   }
 }

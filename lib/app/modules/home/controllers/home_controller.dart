@@ -11,7 +11,7 @@ class HomeController extends GetxController {
   TextEditingController amountController = TextEditingController();
   TextEditingController numOfCoinController = TextEditingController();
 
-  MarketController marketController = Get.find();
+  MarketController marketController = Get.find<MarketController>();
 
   var exchangeList = <ExchangeModel>[].obs;
 

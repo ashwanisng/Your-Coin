@@ -5,8 +5,6 @@ import 'package:your_coin/app/modules/sign_up/controllers/sign_up_controller.dar
 class SignUpBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SignUpController>(
-      () => SignUpController(),
-    );
+    Get.lazyPut<SignUpController>(() => SignUpController(), fenix: true);
   }
 }

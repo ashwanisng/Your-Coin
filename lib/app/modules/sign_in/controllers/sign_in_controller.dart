@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 
 class SignInController extends GetxController {
   //TODO: Implement SignInController
@@ -9,7 +10,8 @@ class SignInController extends GetxController {
   TextEditingController passwordController =
       TextEditingController(text: '123456');
 
-  // FirebaseAuthController firebaseAuthController = Get.find();
+  // FirebaseAuthController firebaseAuthController =
+  // Get.find<FirebaseAuthController>();
 
   var isVisible = true.obs;
 
@@ -19,6 +21,7 @@ class SignInController extends GetxController {
 
   @override
   void onInit() {
+    print("object");
     super.onInit();
   }
 

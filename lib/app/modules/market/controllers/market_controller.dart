@@ -15,10 +15,10 @@ class MarketController extends GetxController {
   void onInit() async {
     try {
       isLoading.value = true;
-      var data = await MarketApiServices.fetchMarketData();
-      if (data!.length > 0) {
+      MarketApiServices marketApiServices = MarketApiServices();
+      var data = await marketApiServices.fetchMarketData();
+      if (data.isNotEmpty) {
         cryptoList.value = data;
-        // homeController.exchangeList.value = data;
       }
     } catch (e) {
       print(e);

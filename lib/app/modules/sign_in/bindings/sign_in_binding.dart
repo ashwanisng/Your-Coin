@@ -10,13 +10,14 @@ import 'package:your_coin/app/modules/sign_up/controllers/sign_up_controller.dar
 class SignInBinding extends Bindings {
   @override
   void dependencies() {
-    Get.lazyPut<SignInController>(
-      () => SignInController(),
-    );
-    // Get.lazyPut<FirebaseAuthController>(
-    //   () => FirebaseAuthController(),
-    // );
+    Get.lazyPut<SignInController>(() => SignInController(), fenix: true);
+    // Get.lazyPut<FirebaseAuthController>(() => FirebaseAuthController(),
+    //     fenix: true);
 
-    Get.put(HomeController(), permanent: true);
+    // Get.put(SignInController());
+
+    // Get.put(FirebaseAuthController(), permanent: true);
+
+    // Get.put(HomeController(), permanent: true);
   }
 }

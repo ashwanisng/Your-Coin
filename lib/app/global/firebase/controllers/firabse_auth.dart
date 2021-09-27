@@ -4,12 +4,28 @@ import 'package:get_storage/get_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:your_coin/app/enviroment/utils/dialogs.dart/custom_dialog.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
-import 'package:your_coin/app/modules/about/views/about_view.dart';
-import 'package:your_coin/app/modules/entry/views/entry_view.dart';
+
 import 'package:your_coin/app/modules/entry/views/pages/auth_view.dart';
 import 'package:your_coin/app/modules/home/views/home_view.dart';
+import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
 
 class FirebaseAuthController extends GetxController {
+  @override
+  void onInit() {
+    super.onInit();
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+  }
+
+  @override
+  void onClose() {
+    print("heellllllooooooooooooooooo");
+    super.onClose();
+  }
+
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 
   GoogleSignIn googleSignIn = GoogleSignIn(scopes: ['email']);
@@ -68,7 +84,7 @@ class FirebaseAuthController extends GetxController {
           .signInWithEmailAndPassword(email: email, password: password)
           .then((user) {
         userData.write('isLoggedIn', true);
-        return Get.offAll(HomeView());
+        return Get.offNamed('/home');
       });
     } catch (e) {
       print(e);
