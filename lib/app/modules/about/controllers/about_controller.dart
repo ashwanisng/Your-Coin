@@ -12,20 +12,12 @@ class AboutController extends GetxController {
 
   void changeTheme() {
     try {
-      isDark.value = false;
       ThemeService().changeThemeMode();
+      isDark.value = ThemeService().isDark;
     } catch (e) {
       print(e);
     } finally {
       isDark.value = true;
-    }
-  }
-
-  void changeValue() {
-    if (ThemeService().isSaveDarkMode() == true) {
-      // isDark.value = true;
-    } else {
-      // isDark.value = false;
     }
   }
 

@@ -193,8 +193,8 @@ class HomeScreenView extends GetView<HomeController> {
                                 text: TextSpan(
                                   text: data
                                           .priceChangePercentage24H!.isNegative
-                                      ? ' ${data.priceChangePercentage24H!.toStringAsFixed(3)}%'
-                                      : '+ ${data.priceChangePercentage24H!.toStringAsFixed(3)}%',
+                                      ? ' ${data.priceChangePercentage24H!.toStringAsFixed(2)}%'
+                                      : '+ ${data.priceChangePercentage24H!.toStringAsFixed(2)}%',
                                   style: TextStyle(
                                       color: data.priceChangePercentage24H!
                                               .isNegative

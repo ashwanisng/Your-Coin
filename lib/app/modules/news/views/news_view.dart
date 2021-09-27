@@ -10,6 +10,9 @@ class NewsView extends GetView<NewsController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Finance News"),
+      ),
       body: Obx(
         () {
           if (controller.isLoading.value) {

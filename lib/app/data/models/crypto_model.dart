@@ -42,10 +42,10 @@ class CryptoCurrency {
   String? name;
   String? image;
   double? currentPrice;
-  int? marketCap;
-  int? marketCapRank;
-  int? fullyDilutedValuation;
-  int? totalVolume;
+  dynamic marketCap;
+  dynamic marketCapRank;
+  dynamic fullyDilutedValuation;
+  dynamic totalVolume;
   double? high24H;
   double? low24H;
   double? priceChange24H;

@@ -76,7 +76,7 @@ class YourTheme {
       fontFamily: 'Nunito',
       fontWeight: FontWeight.w600,
       color: Colors.black,
-      fontSize: 14.0,
+      fontSize: 18.0,
     ),
     headline1: TextStyle(
       fontFamily: 'Nunito',
