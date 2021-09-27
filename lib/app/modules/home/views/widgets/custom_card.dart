@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
+// import 'package:flutter/material.dart';
+// import 'package:get/get.dart';
+// import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
 
-// class CustomCard extends StatelessWidget {
+// // class CustomCard extends StatelessWidget {
 
 //   @override
 //   Widget build(BuildContext context) {

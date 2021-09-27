@@ -227,36 +227,41 @@ class SignUpView extends GetView<SignUpController> {
                     SizedBox(
                       height: 40,
                     ),
-                    GestureDetector(
-                      onTap: () {},
-                      child: Center(
-                        child: Container(
-                          height: 50,
-                          width: 250,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(8),
+                    GetBuilder<FirebaseAuthController>(
+                      builder: (value) => GestureDetector(
+                        onTap: () {
+                          value.googleSignInMethod();
+                        },
+                        child: Center(
+                          child: Container(
+                            height: 50,
+                            width: 250,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(8),
+                              ),
+                              // border: Border.all(color: borderColor),
+                              color: Colors.white,
                             ),
-                            // border: Border.all(color: borderColor),
-                            color: Colors.white,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Image.asset(
-                                'assets/images/google.png',
-                                height: 25,
-                              ),
-                              Text(
-                                "Sign in with Google",
-                                style: TextStyle(
-                                  color: Theme.of(context).colorScheme.primary,
-                                  fontFamily: "Nunito",
-                                  fontWeight: FontWeight.w700,
-                                  fontSize: 18,
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset(
+                                  'assets/images/google.png',
+                                  height: 25,
                                 ),
-                              ),
-                            ],
+                                Text(
+                                  "Sign up with Google",
+                                  style: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
+                                    fontFamily: "Nunito",
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 18,
+                                  ),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),

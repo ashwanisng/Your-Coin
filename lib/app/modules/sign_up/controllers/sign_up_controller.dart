@@ -4,11 +4,9 @@ import 'package:get/get.dart';
 class SignUpController extends GetxController {
   //TODO: Implement SignUpController
 
-  TextEditingController emailController =
-      TextEditingController(text: "test@test.com");
+  TextEditingController emailController = TextEditingController();
   TextEditingController nameController = TextEditingController();
-  TextEditingController passwordController =
-      TextEditingController(text: "123456");
+  TextEditingController passwordController = TextEditingController();
 
   var isVisible = true.obs;
 

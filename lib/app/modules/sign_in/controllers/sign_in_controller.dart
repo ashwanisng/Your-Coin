@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 
 class SignInController extends GetxController {
   //TODO: Implement SignInController
 
-  TextEditingController emailController =
-      TextEditingController(text: 'test@test.com');
-  TextEditingController passwordController =
-      TextEditingController(text: '123456');
-
-  // FirebaseAuthController firebaseAuthController =
-  // Get.find<FirebaseAuthController>();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
 
   var isVisible = true.obs;
 

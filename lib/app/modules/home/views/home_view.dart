@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/modules/about/views/about_view.dart';
 
-import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
 import 'package:your_coin/app/modules/home/controllers/landing_page.dart';
 import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
 import 'package:your_coin/app/modules/market/views/market_view.dart';

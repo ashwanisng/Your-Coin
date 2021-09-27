@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ashwanisng.your_coin">
    <application
-        android:label="your_coin"
+        android:label="Your Coin"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

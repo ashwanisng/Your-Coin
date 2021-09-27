@@ -15,10 +15,8 @@ class AllBinding extends Bindings {
 
     Get.lazyPut(() => FirebaseAuthController(), fenix: true);
     Get.lazyPut<HomeController>(() => HomeController(), fenix: true);
-    // Get.lazyPut(() => MarketController());
-    // Get.lazyPut(() => NewsController());
+
     Get.lazyPut<AboutController>(() => AboutController(), fenix: true);
-    // Get.put(() => AboutController(), permanent: true);
     Get.lazyPut(() => EntryController());
     Get.lazyPut<NewsController>(() => NewsController(), fenix: true);
 

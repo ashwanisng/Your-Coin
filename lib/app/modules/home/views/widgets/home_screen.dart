@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/env.dart';
 import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
-import 'package:your_coin/app/modules/home/views/widgets/custom_card.dart';
 import 'package:your_coin/app/modules/home/views/widgets/custom_dialogbox.dart';
 
 class HomeScreenView extends GetView<HomeController> {

@@ -1,5 +1,4 @@
 import 'package:get/get.dart';
-import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 
 import 'package:your_coin/app/modules/about/controllers/about_controller.dart';
 

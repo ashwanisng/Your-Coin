@@ -7,7 +7,6 @@ import 'package:your_coin/app/enviroment/utils/env.dart';
 
 import 'package:your_coin/app/modules/entry/views/pages/auth_view.dart';
 import 'package:your_coin/app/modules/home/views/home_view.dart';
-import 'package:your_coin/app/modules/home/views/widgets/home_screen.dart';
 
 class FirebaseAuthController extends GetxController {
   @override
@@ -22,7 +21,6 @@ class FirebaseAuthController extends GetxController {
 
   @override
   void onClose() {
-    print("heellllllooooooooooooooooo");
     super.onClose();
   }
 
@@ -79,7 +77,7 @@ class FirebaseAuthController extends GetxController {
 
   void signInWithEmailAndPassword(String email, String password) async {
     try {
-      // CustomFullScreenDialog();
+      CustomFullScreenDialog();
       await firebaseAuth
           .signInWithEmailAndPassword(email: email, password: password)
           .then((user) {
@@ -96,7 +94,7 @@ class FirebaseAuthController extends GetxController {
         snackPosition: SnackPosition.BOTTOM,
       );
     } finally {
-      // CustomFullScreenDialog.cancelDialog();
+      CustomFullScreenDialog.cancelDialog();
     }
   }
 
@@ -105,7 +103,5 @@ class FirebaseAuthController extends GetxController {
       userData.remove("isLoggedIn");
       return Get.offAll(AuthView());
     });
-    // userData.remove("isLoggedIn");
-    // Get.offAll(AuthView());
   }
 }
