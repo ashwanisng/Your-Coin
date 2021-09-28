@@ -18,3 +18,19 @@ Your Coin is the cryptocurrency where you can find all the crypto-related news, 
 The [CoinGecko](https://www.coingecko.com/en/api) was used to fetch data. <br>
 <br>
 <br> Please star⭐ the repo if you like what you see😉.
+
+## 💻 Requirements
+
+- Any Operating System (ie. MacOS X, Linux, Windows)
+- Any IDE with Flutter SDK installed (ie. IntelliJ, Android Studio, VSCode etc)
+- A little knowledge of Dart and Flutter
+
+## ✨ Features
+
+- [x] All Crypto Coin market values, market rank, perctage increase, percentage decrease etc.
+- [x] Rank wise crypto coin updated every 24Hour.
+- [x] Check your current investment value. 
+- [x] Finance related news.
+- [x] User friendly UI.
+- [x] Dark Mode.
+- [x] Clean Architecture.    
