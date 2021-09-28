@@ -119,3 +119,11 @@ git push -u origin <your_branch_name>
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
+
+
+
+## 🔖 LICENCE
+
+[MIT License](https://github.com/ashwanisng/Your-Coin/blob/master/LICENSE)
+
+<p align="center"><img width=35% src="https://media.giphy.com/media/xUPGcJGy8I928yIlAQ/giphy.gif"></p>
