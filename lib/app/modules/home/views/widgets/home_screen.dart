@@ -6,8 +6,6 @@ import 'package:your_coin/app/modules/home/controllers/home_controller.dart';
 import 'package:your_coin/app/modules/home/views/widgets/custom_dialogbox.dart';
 
 class HomeScreenView extends GetView<HomeController> {
-  final items = [];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,15 +164,13 @@ class HomeScreenView extends GetView<HomeController> {
                     child: Card(
                       elevation: 2,
                       child: ListTile(
-                        leading: Image.network(data.image!),
+                        leading: Image.network(data.image!, height: 46),
                         title: Text(
                           data.id!.toUpperCase(),
                           style: Theme.of(context).textTheme.bodyText2,
                         ),
-                        subtitle: Text(
-                          'Rank ${data.marketCapRank}',
-                          style: Theme.of(context).textTheme.headline1,
-                        ),
+                        subtitle: Text('Rank ${data.marketCapRank}',
+                            style: Theme.of(context).textTheme.headline1),
                         trailing: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
