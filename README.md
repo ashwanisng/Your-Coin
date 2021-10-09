@@ -9,7 +9,7 @@
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/ashwanisng.svg?style=social)](https://twitter.com/ashwanisng)
 
-Your Coin is the cryptocurrency where you can find all the crypto-related news, market rates, and you can also check your investments.
+Your Coin is the crypto app where you can find all the crypto-related news, market rates, and you can also check your investments.
 
 <p align="center"><img src="screenshot/logo/rocket.png" width=35% height=15%></p>
 
@@ -33,7 +33,24 @@ The [CoinGecko](https://www.coingecko.com/en/api) was used to fetch data. <br>
 - [x] Finance related news.
 - [x] User friendly UI.
 - [x] Dark Mode.
-- [x] Clean Architecture.    
+- [x] Clean Architecture.   
+
+
+## 📸 ScreenShots
+
+<!-- <img src="ss/mockup.png"/> -->
+
+| Light                             | Dark                              |
+| --------------------------------- | --------------------------------- |
+| <img src="screenshot/l0.jpg" width="200" height="400">  | <img src="screenshot/d0.jpg" width="200" height="400">  |
+| <img src="screenshot/l1.jpg" width="200" height="400">  | <img src="screenshot/d1.jpg" width="200" height="400">  |
+| <img src="screenshot/l2.jpg" width="200" height="400">  | <img src="screenshot/d2.jpg" width="200" height="400">  |
+| <img src="screenshot/l3.jpg" width="200" height="400">  | <img src="screenshot/d3.jpg" width="200" height="400">  |
+| <img src="screenshot/l4.jpg" width="200" height="400">  | <img src="screenshot/d4.jpg" width="200" height="400">  |
+| <img src="screenshot/l5.jpg" width="200" height="400">  | <img src="screenshot/5.jpg" width="200" height="400">  |
+
+
+
 
 
 ## Contribution Guidelines🏗
