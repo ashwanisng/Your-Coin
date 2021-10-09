@@ -137,6 +137,7 @@ class FirebaseAuthController extends GetxController {
       collectionReference.add({
         "title": title,
         "description": description,
+        "uid": uid,
       });
     } catch (e) {
       Get.snackbar(
