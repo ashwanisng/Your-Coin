@@ -2,7 +2,7 @@ import 'dart:convert';
 
 List<CryptoCurrency> cryptoCurrencyFromJson(String str) =>
     List<CryptoCurrency>.from(
-        json.decode(str).map((x) => CryptoCurrency.fromJson(x)));
+        jsonDecode(str).map((x) => CryptoCurrency.fromJson(x)));
 
 String cryptoCurrencyToJson(List<CryptoCurrency> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));

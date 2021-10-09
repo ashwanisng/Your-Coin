@@ -16,6 +16,7 @@ class MarketView extends GetView<MarketController> {
       child: Scaffold(
         backgroundColor: const Color(0xFF3baee7),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           bottom: TabBar(
             // controller: tabController,
             unselectedLabelColor: Colors.lightBlue[100],

@@ -12,6 +12,7 @@ class NewsView extends GetView<NewsController> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Finance News"),
+        automaticallyImplyLeading: false,
       ),
       body: Obx(
         () {

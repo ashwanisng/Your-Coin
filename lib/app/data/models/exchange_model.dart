@@ -16,7 +16,6 @@ class ExchangeModel {
     this.currentPrice,
     this.marketCap,
     this.marketCapRank,
-    this.fullyDilutedValuation,
     this.totalVolume,
     this.high24H,
     this.low24H,
@@ -44,7 +43,6 @@ class ExchangeModel {
   double? currentPrice;
   int? marketCap;
   int? marketCapRank;
-  int? fullyDilutedValuation;
   int? totalVolume;
   double? high24H;
   double? low24H;
@@ -72,9 +70,7 @@ class ExchangeModel {
         currentPrice: json["current_price"].toDouble(),
         marketCap: json["market_cap"],
         marketCapRank: json["market_cap_rank"],
-        fullyDilutedValuation: json["fully_diluted_valuation"] == null
-            ? null
-            : json["fully_diluted_valuation"],
+
         totalVolume: json["total_volume"],
         high24H: json["high_24h"].toDouble(),
         low24H: json["low_24h"].toDouble(),
@@ -110,8 +106,6 @@ class ExchangeModel {
         "current_price": currentPrice,
         "market_cap": marketCap,
         "market_cap_rank": marketCapRank,
-        "fully_diluted_valuation":
-            fullyDilutedValuation == null ? null : fullyDilutedValuation,
         "total_volume": totalVolume,
         "high_24h": high24H,
         "low_24h": low24H,

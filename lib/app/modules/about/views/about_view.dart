@@ -6,6 +6,7 @@ import 'package:your_coin/app/enviroment/utils/theme_service.dart';
 import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
 
 import 'package:your_coin/app/modules/about/controllers/about_controller.dart';
+import 'package:your_coin/app/modules/about/views/bug_report.dart';
 import 'package:your_coin/app/modules/about/views/info.dart';
 
 class AboutView extends GetView<AboutController> {
@@ -15,6 +16,8 @@ class AboutView extends GetView<AboutController> {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
         title: Text('Setting'),
+        automaticallyImplyLeading: false,
+
         // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
       body: Padding(
@@ -60,6 +63,26 @@ class AboutView extends GetView<AboutController> {
                     Icons.arrow_forward_ios,
                     color: Theme.of(context).colorScheme.primary,
                   ),
+                ),
+              ),
+            ),
+            SizedBox(height: 8),
+            Card(
+              elevation: 2,
+              child: ListTile(
+                title: Text(
+                  'Report Bug',
+                  style: Theme.of(context).textTheme.bodyText2,
+                ),
+                trailing: IconButton(
+                  icon: Icon(
+                    Icons.bug_report,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  color: Colors.grey,
+                  onPressed: () {
+                    Get.to(() => BugReport());
+                  },
                 ),
               ),
             ),

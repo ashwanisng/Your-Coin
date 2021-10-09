@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:your_coin/app/enviroment/utils/theme_service.dart';
 import 'package:your_coin/app/global/firebase/controllers/firabse_auth.dart';
@@ -9,6 +10,9 @@ class AboutController extends GetxController {
 
   FirebaseAuthController firebaseAuthController =
       Get.find<FirebaseAuthController>();
+
+  TextEditingController bugTitleController = TextEditingController();
+  TextEditingController bugDescriptionController = TextEditingController();
 
   void changeTheme() {
     try {
