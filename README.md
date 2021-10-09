@@ -136,6 +136,10 @@ git push -u origin <your_branch_name>
 
 <p align="center"><img src="https://media.giphy.com/media/5mCQOcUfywmyI/giphy.gif" width=35%></p>
 
+## Download from PlayStore
+
+[![PlayStore Link](https://github.com/ashwanisng/Your-Coin/blob/master/assets/logo/playstore_logo.png)](https://play.google.com/store/apps/details?id=com.ashwanisng.your_coin)
+
 
 
 
